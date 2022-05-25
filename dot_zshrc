@@ -19,6 +19,7 @@ eval "$(oh-my-posh init zsh --config ~/.config/.poshthemes/dracula.omp.json)"
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "hlissner/zsh-autopair"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+zsh_add_plugin "MichaelAquilina/zsh-auto-notify"
 
 ###### INITIAL OUTPUT ######
 

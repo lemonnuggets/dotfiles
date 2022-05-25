@@ -39,10 +39,10 @@ alias zedit="$EDITOR $HOME/.zshrc"
 alias zsh-update-plugins="find '$ZSH_CONFIG/plugins' -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 
 # pacman
-alias pacman-backup="mkdir -p $HOME/.backup/pacman; pacman -Qqen > $HOME/.backup/pacman/pkglist.txt"
-alias pacman-backup-local="mkdir -p $HOME/.backup/pacman; pacman -Qqem > $HOME/.backup/pacman/localpkglist.txt"
-alias pacman-restore="sudo pacman -S --needed $(comm -12 <(pacman -Slq|sort) <(sort $HOME/.backup/pacman/pkglist.txt) )"
-alias pacman-restore-local="yay -S --noeditmenu --noconfirm --needed $HOME/.backup/pacman/localpkglist.txt"   # yay is required
+# alias pacman-backup="mkdir -p $HOME/.backup/pacman; pacman -Qqen > $HOME/.backup/pacman/pkglist.txt"
+# alias pacman-backup-local="mkdir -p $HOME/.backup/pacman; pacman -Qqem > $HOME/.backup/pacman/localpkglist.txt"
+# alias pacman-restore="sudo pacman -S --needed $(comm -12 <(pacman -Slq|sort) <(sort $HOME/.backup/pacman/pkglist.txt) )"
+# alias pacman-restore-local="yay -S --noeditmenu --noconfirm --needed $HOME/.backup/pacman/localpkglist.txt"   # yay is required
 
 # misc
 alias cls='clear'

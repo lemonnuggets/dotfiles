@@ -4,5 +4,5 @@
 	email = 63046776+lemonnuggets@users.noreply.github.com
 	name = lemonnuggets
 [credential]
-	helper = cache
+	helper = /usr/share/git/credential/gnome-keyring/git-credential-gnome-keyring
 	credentialStore = cache
