@@ -48,6 +48,7 @@ local result = packer.startup(function(use)
     use 'kyazdani42/nvim-web-devicons'
     use 'kyazdani42/nvim-tree.lua'
 
+    use 'williamboman/nvim-lsp-installer'
     use 'neovim/nvim-lspconfig'
     -- ^^^^^^^ Add plugins here ^^^^^^^
 

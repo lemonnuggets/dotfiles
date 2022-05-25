@@ -20,7 +20,7 @@ alias less='less -R'
 # neovim
 alias vi="nvim"
 alias vim="nvim"
-alias viedit=" $EDITOR $HOME/.vim/vimrc"
+alias vedit=" $EDITOR $HOME/.config/nvim"
 
 # grep
 alias grep='grep --color=auto'
