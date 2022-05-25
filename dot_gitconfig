@@ -1,0 +1,8 @@
+[init]
+	defaultBranch = main
+[user]
+	email = 63046776+lemonnuggets@users.noreply.github.com
+	name = lemonnuggets
+[credential]
+	helper = cache
+	credentialStore = cache

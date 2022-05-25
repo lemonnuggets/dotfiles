@@ -1,0 +1,12 @@
+configuration {
+  display-drun: "applications";
+  display-window: "window";
+  drun-display-format: "{icon} {name}";
+  modi: "window,run,drun";
+  show-icons: true;
+  icon-theme: "Papirus";
+}
+
+//@theme "~/.config/rofi/themes/dracula-one.rasi"
+
+@theme "/home/adam/.config/rofi/themes/dracula-one.rasi"
