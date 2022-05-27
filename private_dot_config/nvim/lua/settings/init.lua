@@ -19,11 +19,16 @@ set.expandtab = true            --Replace tab with appropriate number of spaces
 set.smarttab = true             --Detect and add tab of appropriate size on new line
 set.shiftwidth = 4              --Number of spaces in beginning of newline
 set.tabstop = 4                 --Size of tab
+set.showtabline = 2             --The value of this option specifies when the line with tab page labels will be displayed:
+                                --0: never 1: only if there are at least two tab pages 2: always
+
 set.clipboard='unnamedplus'     --Use system clipboard
 set.updatetime = 250            --Decrease update time, faster completion
 set.signcolumn = 'yes'          --Always draws signcolumn, else text is shifted each time
 set.conceallevel = 0            -- so that `` is visible in markdown files
 set.pumheight = 10              -- pop up menu height
+set.showmode = false            -- doesn't show mode like -- INSERT -- since lualine shows that
+set.completeopt = { "menuone", "noselect" }
 set.hidden = true
 set.fileencoding = 'utf-8'
 

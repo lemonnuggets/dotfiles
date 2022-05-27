@@ -1,11 +1,8 @@
 local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
 
-keymap('n', '<c-n>', '<cmd>NvimTreeToggle<CR>', opts)
+keymap('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', opts)
 keymap('n', '<c-b>', '<cmd>NvimTreeFocus<CR>', opts)
-keymap('n', '<c-q>', '<cmd>NvimTreeClose<CR>', opts)
-keymap('n', '<leader>n', '<cmd>NvimTreeFindFile<CR>', opts)
-keymap('n', '<leader>r', '<cmd>NvimTreeRefresh<CR>', opts)
 
 -- keymappings
 local list = {
