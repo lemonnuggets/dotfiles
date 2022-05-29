@@ -19,6 +19,7 @@ zsh_add_plugin "MichaelAquilina/zsh-auto-notify"
 # required
 eval "$(fnm env --use-on-cd)"
 eval "$(pyenv init -)"
+eval "$(thefuck --alias)"
 eval "$(oh-my-posh init zsh --config ~/.config/zsh/oh-my-posh/dracula-bubblesextra.omp.json)"
 
 ###### INITIAL OUTPUT ######
@@ -30,3 +31,4 @@ bootTimeEnd=$(gdate +%s%N 2>/dev/null || date +%s%N)
 bootTimeDuration=$((($bootTimeEnd - $bootTimeStart)/1000000))
 # display boot time on load
 echo $bootTimeDuration ms overall boot duration
+export PATH=$PATH:/home/adam/.spicetify
