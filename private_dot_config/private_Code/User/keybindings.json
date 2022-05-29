@@ -1,0 +1,243 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+alt+v",
+        "command": "toggleVim"
+    },
+    {
+        "key": "j",
+        "when": "listFocus && explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "k",
+        "command": "list.focusUp",
+        "when": "listFocus && explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "selectNextSuggestion",
+        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectPrevSuggestion",
+        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    // {
+    //     "key": "tab",
+    //     "command": "selectNextSuggestion",
+    //     "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    // },
+    // {
+    //     "key": "shift+tab",
+    //     "command": "selectPrevSuggestion",
+    //     "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    // },
+    {
+        "key": "shift+alt+j",
+        "command": "editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+k",
+        "command": "editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpenNavigateNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpenNavigatePrevious",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "tab",
+        "command": "workbench.action.quickOpenNavigateNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "shift+tab",
+        "command": "workbench.action.quickOpenNavigatePrevious",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "enter",
+        "command": "list.select",
+        "when": "explorerViewletVisible && filesExplorerFocus"
+    },
+    {
+        "key": "l",
+        "command": "list.select",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "o",
+        "command": "list.toggleExpand",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "h",
+        "command": "list.collapse",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "a",
+        "command": "explorer.newFile",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "shift+a",
+        "command": "explorer.newFolder",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "shift+ctrl+e",
+        "command": "actions.findWithSelection"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-actions.findWithSelection"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.view.explorer"
+    },
+    {
+        "key": "shift+ctrl+e",
+        "command": "-workbench.view.explorer"
+    },
+    {
+        "key": "r",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "enter",
+        "command": "-renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    // {
+    //     "key": "ctrl+h",
+    //     "command": "workbench.action.focusSideBar",
+    //     "when": "!sideBarFocus"
+    // },
+    // {
+    //     "key": "ctrl+l",
+    //     "command": "workbench.action.focusActiveEditorGroup",
+    //     "when": "sideBarFocus"
+    // },
+    // {
+    //     "key": "ctrl+h",
+    //     "command": "workbench.action.navigateLeft"
+    // },
+    // {
+    //     "key": "ctrl+l",
+    //     "command": "workbench.action.navigateRight"
+    // },
+    // {
+    //     "key": "ctrl+k",
+    //     "command": "workbench.action.navigateUp"
+    // },
+    // {
+    //     "key": "ctrl+j",
+    //     "command": "workbench.action.navigateDown"
+    // },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.focusRightGroup"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.focusAboveGroup",
+        "when": "!inQuickOpen && !suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.focusBelowGroup",
+        "when": "!inQuickOpen && !suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+shift+h",
+        "command": "workbench.action.moveEditorToPreviousGroup"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.moveEditorToNextGroup"
+    },
+    {
+        "key": "Escape",
+        "command": "workbench.view.explorer",
+        "when": "searchViewletVisible"
+    },
+    // {
+    //     "key": "ctrl+shift+t",
+    //     "command": "workbench.action.terminal.focus",
+    //     "when": "!terminalFocus"
+    // },
+    {
+        "key": "alt+j",
+        "command": "workbench.action.terminal.focus",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.togglePanel"
+    },
+    {
+        "key": "shift+k",
+        "command": "editor.action.showHover",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+tab",
+        "command": "-acceptAlternativeSelectedSuggestion",
+        "when": "suggestWidgetVisible && textInputFocus && textInputFocus"
+    },
+    // {
+    //     "key": "ctrl+w",
+    //     "command": "-workbench.action.closeWindow",
+    //     "when": "!editorIsOpen && !multipleEditorGroups"
+    // },
+    {
+        "key": "ctrl+shift+n",
+        "command": "extension.advancedNewFile"
+    },
+    {
+        "key": "alt+shift+`",
+        "command": "workbench.action.terminal.focusPrevious"
+    },
+    {
+        "key": "alt+`",
+        "command": "workbench.action.terminal.focusNext"
+    },
+    {
+        "key": "shift+alt+f",
+        "command": "workbench.action.files.openFolder",
+        "when": "openFolderWorkspaceSupport"
+    },
+    {
+        "key": "ctrl+k ctrl+o",
+        "command": "-workbench.action.files.openFolder",
+        "when": "openFolderWorkspaceSupport"
+    },
+    {
+        "key": "ctrl+shift+e",
+        "command": "extension.multiCommand.execute",
+        "args": {
+            "sequence": [
+                "workbench.action.toggleActivityBarVisibility",
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        }
+        // "command": "workbench.action.openEditorAtIndex1",
+        // "command": "workbench.action.toggleSidebarVisibility",
+        // "command": "workbench.action.toggleActivityBarVisibility",
+    }
+]
