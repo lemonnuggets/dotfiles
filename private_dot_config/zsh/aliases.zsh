@@ -8,11 +8,15 @@ alias psmem='ps auxf | sort -nr -k 4 | head -5'
 # get top process eating cpu ##
 alias pscpu='ps auxf | sort -nr -k 3 | head -5'
 
-# ls aliases
-alias l='ls -lFh --color=auto'					# long list, show type, human readable
-alias la='ls -lFhA --color=auto'				# long list, show type, human readable, show almost all
-alias lt='ls -tFh --color=auto'					# sort by date, show type, human readable
-alias lr='ls -tFhR --color=auto'				# sort by date, show type, human readable, recursive
+# ls/exa aliases
+alias cat='bat'
+
+# ls/exa aliases
+alias l='exa --long --icons'
+alias la='exa --long --all --icons'
+alias lt='exa --long --all --sort=modified --icons'
+alias lr='exa --long --recurse --all --icons'
+alias lrt='exa --long --tree --all --icons'
 
 # less aliases
 alias less='less -R'

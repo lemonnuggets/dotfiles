@@ -194,6 +194,10 @@
             "commands": ["editor.action.goToImplementation"]
         },
         {
+            "before": ["g", "T"],
+            "commands": ["editor.action.goToTypeDefinition"]
+        },
+        {
             "before": ["<leader>", "w"],
             "commands": ["workbench.action.splitEditor"]
         },
