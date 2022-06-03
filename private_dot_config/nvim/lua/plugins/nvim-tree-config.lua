@@ -1,4 +1,4 @@
-local list = require('keybindings.nvim-tree-config')
+local keybindings = require('keybindings.nvim-tree-config')
 -- setup
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 -- nested options are documented by accessing them with `.` (eg: `:help nvim-tree.view.mappings.list`).
@@ -21,17 +21,17 @@ require('nvim-tree').setup({
         hide_root_folder = false,
         side = "left",
         preserve_window_proportions = false,
-        number = false,
-        relativenumber = false,
+        number = true,
+        relativenumber = true,
         signcolumn = "yes",
         mappings = {
             custom_only = false,
-            list = list,
+            list = keybindings,
         },
     },
     renderer = {
         indent_markers = {
-            enable = false,
+            enable = true,
             icons = {
                 corner = "└ ",
                 edge = "│ ",
@@ -59,7 +59,7 @@ require('nvim-tree').setup({
     },
     diagnostics = {
         enable = true,
-        show_on_dirs = false,
+        show_on_dirs = true,
         icons = {
             hint = "",
             info = "",

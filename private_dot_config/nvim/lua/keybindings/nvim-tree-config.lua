@@ -1,8 +1,8 @@
 local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
 
-keymap('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', opts)
-keymap('n', '<c-b>', '<cmd>NvimTreeFocus<CR>', opts)
+keymap('n', '<leader>ee', '<cmd>NvimTreeToggle<CR>', opts)
+keymap('n', '<leader>ef', '<cmd>NvimTreeFocus<CR>', opts)
 
 -- keymappings
 local list = {

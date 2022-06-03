@@ -50,6 +50,8 @@ packer.init {
 local result = packer.startup(function(use)
     -- vvvvvvv Add plugins here vvvvvvv
     use 'wbthomason/packer.nvim' -- packer manages itself
+    use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+    use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
     use { 'dracula/vim', as = 'dracula' }
 
@@ -67,6 +69,8 @@ local result = packer.startup(function(use)
     use "norcalli/nvim-colorizer.lua" -- color highlighter #000000 #FFFFFF
 
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+    use "folke/which-key.nvim"
 
     -- treesitter plugins
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -92,6 +96,8 @@ local result = packer.startup(function(use)
     use 'L3MON4D3/LuaSnip' -- Snippets plugin
     use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
+    use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+
     -- Git
     use "lewis6991/gitsigns.nvim"
 
@@ -100,6 +106,8 @@ local result = packer.startup(function(use)
     use 'MunifTanjim/prettier.nvim'
 
     use 'github/copilot.vim'
+
+    use 'ThePrimeagen/vim-be-good'
     -- ^^^^^^^ Add plugins here ^^^^^^^
 
     -- Automatically set up your configuration after cloning packer.nvim
@@ -114,9 +122,12 @@ require('plugins.lualine-config')
 require('plugins.barbar-config')
 require('plugins.comment-nvim-config')
 require('plugins.nvim-colorizer-config')
+require('plugins.which-key-config')
 require('plugins.treesitter-config')
 require('plugins.telescope-config')
 require('plugins.markdown-preview-config')
+require('plugins.autopairs')
+require('plugins.cmp')
 require('plugins.lsp')
 
 return result

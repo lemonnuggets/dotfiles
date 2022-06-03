@@ -10,16 +10,16 @@ local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 --Remap space as leader key
-keymap({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })     --leader key
-vim.g.mapleader=' '
-vim.g.maplocalleader=' '
+keymap({ "n", "v" }, "<Space>", "<Nop>", { silent = true })     --leader key
+vim.g.mapleader=" "
+vim.g.maplocalleader=" "
 
 --clear search highlighting
-keymap('n', '<leader>ll', '<cmd>noh<CR>', {})
+keymap("n", "<leader>ll", "<cmd>noh<CR>", {})
 
 --save file
-keymap('n', '<c-s>', ':w<CR>', {})
-keymap('i', '<c-s>', '<ESC>:w<CR>a', {})
+keymap("n", "<c-s>", ":w<CR>", {})
+keymap("i", "<c-s>", "<ESC>:w<CR>a", {})
 
 --move between windows
 keymap("n", "<c-h>", "<c-w>h", opts)
@@ -30,8 +30,8 @@ keymap("n", "<c-l>", "<c-w>l", opts)
 --resize windows
 keymap("n", "<c-up>", "<cmd>resize +2<CR>", opts)
 keymap("n", "<c-down>", "<cmd>resize -2<CR>", opts)
-keymap("n", "<c-left>", "<cmd>vertical resize -2<CR>", opts)
-keymap("n", "<c-right>", "<cmd>vertical resize +2<CR>", opts)
+keymap("n", "<c-left>", "<cmd>vertical resize +2<CR>", opts)
+keymap("n", "<c-right>", "<cmd>vertical resize -2<CR>", opts)
 
 --quick exit insert mode
 --keymap("i", "jk", "<ESC>", opts)
@@ -51,6 +51,7 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "p", "_dP", opts)   --when pasting into selected area, doesn't copy overwritten text into buffer
 
 -- Terminal --
 -- Better terminal navigation
@@ -58,6 +59,10 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+-- keymap("", "", "", opts)
+keymap("n", "<leader><CR>", "<cmd>so ~/.config/nvim/init.lua<CR>", opts)
+keymap("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>//gI<Left><Left><Left>", opts)
 
 require('keybindings.nvim-tree-config')
 require('keybindings.barbar-config')
