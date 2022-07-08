@@ -2,7 +2,7 @@
     "explorer.confirmDragAndDrop": false,
     "explorer.autoReveal": false,
     "editor.lineNumbers": "relative",
-    "editor.fontFamily": "SauceCodePro Nerd Font",
+    "editor.fontFamily": "FiraCode Nerd Font Mono",
     "editor.tabCompletion": "on",
     "editor.fontLigatures": true,
     "editor.linkedEditing": true,
@@ -58,7 +58,7 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "terminal.integrated.fontWeight": 2,
-    "terminal.integrated.fontFamily": "SauceCodePro Nerd Font Mono",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
     "terminal.integrated.tabs.enabled": true,
     "terminal.integrated.profiles.windows": {
         "PowerShell": {
@@ -88,7 +88,7 @@
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
-    "workbench.colorTheme": "Dracula",
+    "workbench.colorTheme": "Everforest Dark",
     // "workbench.colorCustomizations": {
     //   "terminal.background": "#F5F5F5",
     //   "terminal.foreground": "#303030",
@@ -126,9 +126,11 @@
     "jupyter.askForKernelRestart": false,
     "files.exclude": {
         "**/.classpath": true,
+        "**/.factorypath": true,
         "**/.project": true,
         "**/.settings": true,
-        "**/.factorypath": true
+        "**/build": true,
+        "**/node_modules": true
     },
     "vim.smartRelativeLine": true,
     "vim.easymotion": true,
@@ -320,5 +322,5 @@
         "vitejs"
     ],
     "explorer.confirmDelete": false,
-    "workbench.activityBar.visible": false
+    "extensions.ignoreRecommendations": true
 }

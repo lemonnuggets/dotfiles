@@ -172,11 +172,6 @@
         "key": "ctrl+shift+l",
         "command": "workbench.action.moveEditorToNextGroup"
     },
-    {
-        "key": "Escape",
-        "command": "workbench.view.explorer",
-        "when": "searchViewletVisible"
-    },
     // {
     //     "key": "ctrl+shift+t",
     //     "command": "workbench.action.terminal.focus",
