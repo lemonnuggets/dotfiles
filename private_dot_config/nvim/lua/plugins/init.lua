@@ -7,6 +7,7 @@ local result = packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 
 	use({ "dracula/vim", as = "dracula" })
+	use("sainnhe/everforest")
 
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
