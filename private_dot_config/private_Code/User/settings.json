@@ -118,7 +118,7 @@
         "*.html": "html"
     },
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "python.defaultInterpreterPath": "C:\\Users\\Admin\\.pyenv\\pyenv-win\\shims\\python",
+    "python.defaultInterpreterPath": "",
     "python.linting.pylintArgs": [
         "--extension-pkg-whitelist=pygame" // comma separated
     ],

@@ -30,7 +30,7 @@ alias vedit=" $EDITOR $HOME/.config/nvim"
 alias grep='grep --color=auto'
 
 # mupdf
-alias mupdf='mupdf "$(fzf)"'
+alias mupdfzf='mupdf "$(fzf)"'
 
 # edit zsh
 alias aedit="$EDITOR $ZSH_CONFIG/aliases.zsh; source $ZSH_CONFIG/aliases.zsh"
@@ -57,3 +57,4 @@ alias path="e $PATH | sed s/\:/\\\n/g"
 alias refresh="exec '$SHELL'"
 alias weather="$ZSH_CONFIG/wttr.sh"
 alias note="$EDITOR $HOME/random.md"
+alias tt="mupdf ~/college/sem-5/.time-table/timetable.png"
