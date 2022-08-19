@@ -4,7 +4,7 @@
 	email = 63046776+lemonnuggets@users.noreply.github.com
 	name = lemonnuggets
 [credential]
-	helper = /usr/share/git/credential/gnome-keyring/git-credential-gnome-keyring
+	helper = kwallet
 	credentialStore = cache
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX

@@ -14,6 +14,7 @@ export PATH=$HOME/.local/sbin:$PATH
 export EDITOR=nvim
 export TERMINAL="kitty"
 export BROWSER="brave"
+export SHELL="/bin/zsh"
 
 # zsh
 export ZSH_CONFIG="$XDG_CONFIG_HOME/zsh"
