@@ -25,6 +25,7 @@ mkdir -p $ZSH_CACHE
 HISTSIZE=1000000
 SAVEHIST=1000000
 HISTFILE=$ZSH_CACHE/history
+export HISTFILE="${XDG_STATE_HOME}/bash/history"
 
 # cargo
 export PATH="$HOME/.cargo/bin:$PATH"

@@ -26,6 +26,9 @@ alias vi="nvim"
 alias vim="nvim"
 alias vedit=" $EDITOR $HOME/.config/nvim"
 
+# wget
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+
 # grep
 alias grep='grep --color=auto'
 
