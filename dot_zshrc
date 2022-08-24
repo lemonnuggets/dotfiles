@@ -20,7 +20,7 @@ zsh_add_plugin "MichaelAquilina/zsh-auto-notify"
 eval "$(fnm env --use-on-cd)"
 eval "$(pyenv init -)"
 eval "$(thefuck --alias)"
-eval "$(oh-my-posh init zsh --config ~/.config/zsh/oh-my-posh/everforest-bubblesextra.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.config/zsh/oh-my-posh/dracula-bubblesextra.omp.json)"
 # eval "$(direnv hook zsh)"
 
 ###### INITIAL OUTPUT ######

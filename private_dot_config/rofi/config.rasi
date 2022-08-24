@@ -9,4 +9,4 @@ configuration {
 
 //@theme "~/.config/rofi/themes/dracula-one.rasi"
 
-@theme "/home/adam/.config/rofi/themes/dracula-two.rasi"
+@theme "/home/adam/.config/rofi/themes/dracula-one.rasi"

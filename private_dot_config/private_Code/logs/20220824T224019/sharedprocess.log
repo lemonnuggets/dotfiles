@@ -1,0 +1,113 @@
+[2022-08-24 22:40:22.443] [sharedprocess] [info] Starting worker process with pid 193880 (type: fileWatcher, window: 1).
+[2022-08-24 22:46:11.711] [sharedprocess] [info] Getting Manifest... dracula-theme.theme-dracula
+[2022-08-24 22:46:11.720] [sharedprocess] [info] Installing extension: dracula-theme.theme-dracula
+[2022-08-24 22:46:14.121] [sharedprocess] [info] Downloaded extension: dracula-theme.theme-dracula /home/adam/.config/Code/CachedExtensionVSIXs/dracula-theme.theme-dracula-2.24.2
+[2022-08-24 22:46:14.197] [sharedprocess] [info] Extracted extension to /home/adam/.vscode/extensions/.c4b20e92-8e49-4bbf-8378-74ffe9d728d3: dracula-theme.theme-dracula
+[2022-08-24 22:46:14.200] [sharedprocess] [info] Renamed to /home/adam/.vscode/extensions/dracula-theme.theme-dracula-2.24.2
+[2022-08-24 22:46:14.202] [sharedprocess] [info] Extracting completed. dracula-theme.theme-dracula
+[2022-08-24 22:46:14.203] [sharedprocess] [info] Extension installed successfully: dracula-theme.theme-dracula
+[2022-08-24 22:46:47.630] [sharedprocess] [info] Getting Manifest... vscodevim.vim
+[2022-08-24 22:46:47.637] [sharedprocess] [info] Installing extension: vscodevim.vim
+[2022-08-24 22:46:54.108] [sharedprocess] [info] Downloaded extension: vscodevim.vim /home/adam/.config/Code/CachedExtensionVSIXs/vscodevim.vim-1.23.2
+[2022-08-24 22:46:54.210] [sharedprocess] [info] Extracted extension to /home/adam/.vscode/extensions/.fe097328-ed3e-4b75-9bf3-96fa5f576b69: vscodevim.vim
+[2022-08-24 22:46:54.213] [sharedprocess] [info] Renamed to /home/adam/.vscode/extensions/vscodevim.vim-1.23.2
+[2022-08-24 22:46:54.216] [sharedprocess] [info] Extracting completed. vscodevim.vim
+[2022-08-24 22:46:54.219] [sharedprocess] [info] Extension installed successfully: vscodevim.vim
+[2022-08-24 22:47:19.796] [sharedprocess] [info] Getting Manifest... ms-python.python
+[2022-08-24 22:47:19.805] [sharedprocess] [info] Installing extension: ms-python.python
+[2022-08-24 22:47:20.971] [sharedprocess] [info] Getting Manifest... ms-toolsai.jupyter
+[2022-08-24 22:47:21.905] [sharedprocess] [info] Getting Manifest... ms-toolsai.jupyter-keymap
+[2022-08-24 22:47:23.157] [sharedprocess] [info] Getting Manifest... ms-toolsai.jupyter-renderers
+[2022-08-24 22:47:23.495] [sharedprocess] [info] Getting Manifest... ritwickdey.liveserver
+[2022-08-24 22:47:23.501] [sharedprocess] [info] Installing extension: ritwickdey.liveserver
+[2022-08-24 22:47:24.234] [sharedprocess] [info] Getting Manifest... ms-python.vscode-pylance
+[2022-08-24 22:47:24.763] [sharedprocess] [info] Installing extension: ms-toolsai.jupyter
+[2022-08-24 22:47:24.763] [sharedprocess] [info] Installing extension: ms-toolsai.jupyter-keymap
+[2022-08-24 22:47:24.763] [sharedprocess] [info] Installing extension: ms-toolsai.jupyter-renderers
+[2022-08-24 22:47:24.763] [sharedprocess] [info] Installing extension: ms-python.vscode-pylance
+[2022-08-24 22:47:28.243] [sharedprocess] [info] Downloaded extension: ritwickdey.liveserver /home/adam/.config/Code/CachedExtensionVSIXs/ritwickdey.liveserver-5.7.5
+[2022-08-24 22:47:28.474] [sharedprocess] [info] Getting Manifest... esbenp.prettier-vscode
+[2022-08-24 22:47:28.478] [sharedprocess] [info] Installing extension: esbenp.prettier-vscode
+[2022-08-24 22:47:28.534] [sharedprocess] [info] Getting Manifest... dbaeumer.vscode-eslint
+[2022-08-24 22:47:28.541] [sharedprocess] [info] Installing extension: dbaeumer.vscode-eslint
+[2022-08-24 22:47:29.444] [sharedprocess] [info] Extracted extension to /home/adam/.vscode/extensions/.442e2683-5950-4101-b420-a3494b96f06a: ritwickdey.liveserver
+[2022-08-24 22:47:29.448] [sharedprocess] [info] Renamed to /home/adam/.vscode/extensions/ritwickdey.liveserver-5.7.5
+[2022-08-24 22:47:29.450] [sharedprocess] [info] Extracting completed. ritwickdey.liveserver
+[2022-08-24 22:47:29.452] [sharedprocess] [info] Extension installed successfully: ritwickdey.liveserver
+[2022-08-24 22:47:32.203] [sharedprocess] [info] Downloaded extension: ms-toolsai.jupyter-keymap /home/adam/.config/Code/CachedExtensionVSIXs/ms-toolsai.jupyter-keymap-1.0.0
+[2022-08-24 22:47:32.222] [sharedprocess] [info] Extracted extension to /home/adam/.vscode/extensions/.0a9161d6-2bb5-445c-93de-52b4c9b71564: ms-toolsai.jupyter-keymap
+[2022-08-24 22:47:32.226] [sharedprocess] [info] Renamed to /home/adam/.vscode/extensions/ms-toolsai.jupyter-keymap-1.0.0
+[2022-08-24 22:47:32.228] [sharedprocess] [info] Extracting completed. ms-toolsai.jupyter-keymap
+[2022-08-24 22:47:47.759] [sharedprocess] [info] Downloaded extension: dbaeumer.vscode-eslint /home/adam/.config/Code/CachedExtensionVSIXs/dbaeumer.vscode-eslint-2.2.6
+[2022-08-24 22:47:47.785] [sharedprocess] [info] Extracted extension to /home/adam/.vscode/extensions/.c0e04d9e-7d1d-4bf8-80ba-4d13b3291f52: dbaeumer.vscode-eslint
+[2022-08-24 22:47:47.789] [sharedprocess] [info] Renamed to /home/adam/.vscode/extensions/dbaeumer.vscode-eslint-2.2.6
+[2022-08-24 22:47:47.792] [sharedprocess] [info] Extracting completed. dbaeumer.vscode-eslint
+[2022-08-24 22:47:47.794] [sharedprocess] [info] Extension installed successfully: dbaeumer.vscode-eslint
+[2022-08-24 22:47:51.573] [sharedprocess] [info] Downloaded extension: ms-toolsai.jupyter-renderers /home/adam/.config/Code/CachedExtensionVSIXs/ms-toolsai.jupyter-renderers-1.0.9
+[2022-08-24 22:47:51.741] [sharedprocess] [info] Extracted extension to /home/adam/.vscode/extensions/.c949f8dc-d75b-4679-b826-75bacb2b7c67: ms-toolsai.jupyter-renderers
+[2022-08-24 22:47:51.744] [sharedprocess] [info] Renamed to /home/adam/.vscode/extensions/ms-toolsai.jupyter-renderers-1.0.9
+[2022-08-24 22:47:51.746] [sharedprocess] [info] Extracting completed. ms-toolsai.jupyter-renderers
+[2022-08-24 22:48:37.977] [sharedprocess] [info] Downloaded extension: ms-python.python /home/adam/.config/Code/CachedExtensionVSIXs/ms-python.python-2022.12.1
+[2022-08-24 22:48:39.608] [sharedprocess] [info] Extracted extension to /home/adam/.vscode/extensions/.b3ed075d-9c88-4232-b494-c3137311ea6a: ms-python.python
+[2022-08-24 22:48:39.614] [sharedprocess] [info] Renamed to /home/adam/.vscode/extensions/ms-python.python-2022.12.1
+[2022-08-24 22:48:39.619] [sharedprocess] [info] Extracting completed. ms-python.python
+[2022-08-24 22:48:44.779] [sharedprocess] [info] Downloaded extension: esbenp.prettier-vscode /home/adam/.config/Code/CachedExtensionVSIXs/esbenp.prettier-vscode-9.8.0
+[2022-08-24 22:48:45.023] [sharedprocess] [info] Extracted extension to /home/adam/.vscode/extensions/.9dc3d1c3-3645-436d-9cd0-2afef6a3fa5e: esbenp.prettier-vscode
+[2022-08-24 22:48:45.033] [sharedprocess] [info] Renamed to /home/adam/.vscode/extensions/esbenp.prettier-vscode-9.8.0
+[2022-08-24 22:48:45.036] [sharedprocess] [info] Extracting completed. esbenp.prettier-vscode
+[2022-08-24 22:48:45.038] [sharedprocess] [info] Extension installed successfully: esbenp.prettier-vscode
+[2022-08-24 22:48:46.748] [sharedprocess] [info] Getting Manifest... eamodio.gitlens
+[2022-08-24 22:48:46.766] [sharedprocess] [info] Installing extension: eamodio.gitlens
+[2022-08-24 22:48:49.706] [sharedprocess] [info] Getting Manifest... dsznajder.es7-react-js-snippets
+[2022-08-24 22:48:49.713] [sharedprocess] [info] Installing extension: dsznajder.es7-react-js-snippets
+[2022-08-24 22:48:50.704] [sharedprocess] [info] Downloaded extension: ms-toolsai.jupyter /home/adam/.config/Code/CachedExtensionVSIXs/ms-toolsai.jupyter-2022.7.1102252217
+[2022-08-24 22:48:50.871] [sharedprocess] [info] Getting Manifest... editorconfig.editorconfig
+[2022-08-24 22:48:50.876] [sharedprocess] [info] Installing extension: editorconfig.editorconfig
+[2022-08-24 22:48:51.341] [sharedprocess] [info] Extracted extension to /home/adam/.vscode/extensions/.60236d09-309f-47e3-a2b7-338a8550d8fd: ms-toolsai.jupyter
+[2022-08-24 22:48:51.347] [sharedprocess] [info] Renamed to /home/adam/.vscode/extensions/ms-toolsai.jupyter-2022.7.1102252217
+[2022-08-24 22:48:51.359] [sharedprocess] [info] Extracting completed. ms-toolsai.jupyter
+[2022-08-24 22:49:10.241] [sharedprocess] [info] Downloaded extension: editorconfig.editorconfig /home/adam/.config/Code/CachedExtensionVSIXs/editorconfig.editorconfig-0.16.4
+[2022-08-24 22:49:10.287] [sharedprocess] [info] Extracted extension to /home/adam/.vscode/extensions/.d58e2f32-f0f2-4803-ab94-2d1af48a98ad: editorconfig.editorconfig
+[2022-08-24 22:49:10.290] [sharedprocess] [info] Renamed to /home/adam/.vscode/extensions/editorconfig.editorconfig-0.16.4
+[2022-08-24 22:49:10.292] [sharedprocess] [info] Extracting completed. editorconfig.editorconfig
+[2022-08-24 22:49:10.294] [sharedprocess] [info] Extension installed successfully: editorconfig.editorconfig
+[2022-08-24 22:49:10.433] [sharedprocess] [info] Downloaded extension: eamodio.gitlens /home/adam/.config/Code/CachedExtensionVSIXs/eamodio.gitlens-12.1.2
+[2022-08-24 22:49:10.938] [sharedprocess] [info] Extracted extension to /home/adam/.vscode/extensions/.96ccfed4-bfa7-4a65-ab76-ce72e2c3cff1: eamodio.gitlens
+[2022-08-24 22:49:10.948] [sharedprocess] [info] Renamed to /home/adam/.vscode/extensions/eamodio.gitlens-12.1.2
+[2022-08-24 22:49:10.955] [sharedprocess] [info] Extracting completed. eamodio.gitlens
+[2022-08-24 22:49:10.965] [sharedprocess] [info] Extension installed successfully: eamodio.gitlens
+[2022-08-24 22:49:21.672] [sharedprocess] [info] Downloaded extension: dsznajder.es7-react-js-snippets /home/adam/.config/Code/CachedExtensionVSIXs/dsznajder.es7-react-js-snippets-4.4.3
+[2022-08-24 22:49:21.863] [sharedprocess] [info] Extracted extension to /home/adam/.vscode/extensions/.7e63844d-2617-4f46-8485-931b7177c277: dsznajder.es7-react-js-snippets
+[2022-08-24 22:49:21.875] [sharedprocess] [info] Renamed to /home/adam/.vscode/extensions/dsznajder.es7-react-js-snippets-4.4.3
+[2022-08-24 22:49:21.877] [sharedprocess] [info] Extracting completed. dsznajder.es7-react-js-snippets
+[2022-08-24 22:49:21.878] [sharedprocess] [info] Extension installed successfully: dsznajder.es7-react-js-snippets
+[2022-08-24 22:49:35.582] [sharedprocess] [info] Getting Manifest... aaron-bond.better-comments
+[2022-08-24 22:49:35.588] [sharedprocess] [info] Installing extension: aaron-bond.better-comments
+[2022-08-24 22:49:51.335] [sharedprocess] [info] Downloaded extension: aaron-bond.better-comments /home/adam/.config/Code/CachedExtensionVSIXs/aaron-bond.better-comments-3.0.2
+[2022-08-24 22:49:51.366] [sharedprocess] [info] Extracted extension to /home/adam/.vscode/extensions/.56cfcf7d-d0cd-4016-b7fb-e423d3c93b3c: aaron-bond.better-comments
+[2022-08-24 22:49:51.371] [sharedprocess] [info] Renamed to /home/adam/.vscode/extensions/aaron-bond.better-comments-3.0.2
+[2022-08-24 22:49:51.374] [sharedprocess] [info] Extracting completed. aaron-bond.better-comments
+[2022-08-24 22:49:51.376] [sharedprocess] [info] Extension installed successfully: aaron-bond.better-comments
+[2022-08-24 22:50:08.877] [sharedprocess] [info] Downloaded extension: ms-python.vscode-pylance /home/adam/.config/Code/CachedExtensionVSIXs/ms-python.vscode-pylance-2022.8.30
+[2022-08-24 22:50:11.720] [sharedprocess] [info] Extracted extension to /home/adam/.vscode/extensions/.722a2007-e59b-43d3-8287-ddcf45b828e5: ms-python.vscode-pylance
+[2022-08-24 22:50:11.725] [sharedprocess] [info] Renamed to /home/adam/.vscode/extensions/ms-python.vscode-pylance-2022.8.30
+[2022-08-24 22:50:11.732] [sharedprocess] [info] Extracting completed. ms-python.vscode-pylance
+[2022-08-24 22:50:11.737] [sharedprocess] [info] Extension installed successfully: ms-toolsai.jupyter-keymap
+[2022-08-24 22:50:11.738] [sharedprocess] [info] Extension installed successfully: ms-toolsai.jupyter-renderers
+[2022-08-24 22:50:11.739] [sharedprocess] [info] Extension installed successfully: ms-python.python
+[2022-08-24 22:50:11.739] [sharedprocess] [info] Extension installed successfully: ms-toolsai.jupyter
+[2022-08-24 22:50:11.739] [sharedprocess] [info] Extension installed successfully: ms-python.vscode-pylance
+[2022-08-24 22:51:10.104] [sharedprocess] [info] Getting Manifest... rangav.vscode-thunder-client
+[2022-08-24 22:51:10.111] [sharedprocess] [info] Installing extension: rangav.vscode-thunder-client
+[2022-08-24 22:51:15.854] [sharedprocess] [info] Downloaded extension: rangav.vscode-thunder-client /home/adam/.config/Code/CachedExtensionVSIXs/rangav.vscode-thunder-client-1.18.7
+[2022-08-24 22:51:15.919] [sharedprocess] [info] Extracted extension to /home/adam/.vscode/extensions/.18c4726f-e32d-4302-ae15-c55ba4473502: rangav.vscode-thunder-client
+[2022-08-24 22:51:15.923] [sharedprocess] [info] Renamed to /home/adam/.vscode/extensions/rangav.vscode-thunder-client-1.18.7
+[2022-08-24 22:51:15.925] [sharedprocess] [info] Extracting completed. rangav.vscode-thunder-client
+[2022-08-24 22:51:15.927] [sharedprocess] [info] Extension installed successfully: rangav.vscode-thunder-client
+[2022-08-24 22:51:16.892] [sharedprocess] [info] Getting Manifest... shardulm94.trailing-spaces
+[2022-08-24 22:51:16.897] [sharedprocess] [info] Installing extension: shardulm94.trailing-spaces
+[2022-08-24 22:51:19.176] [sharedprocess] [info] Downloaded extension: shardulm94.trailing-spaces /home/adam/.config/Code/CachedExtensionVSIXs/shardulm94.trailing-spaces-0.4.1
+[2022-08-24 22:51:19.258] [sharedprocess] [info] Extracted extension to /home/adam/.vscode/extensions/.a6e4c8fe-1f3e-4d28-9687-d59e28c80132: shardulm94.trailing-spaces
+[2022-08-24 22:51:19.262] [sharedprocess] [info] Renamed to /home/adam/.vscode/extensions/shardulm94.trailing-spaces-0.4.1
+[2022-08-24 22:51:19.264] [sharedprocess] [info] Extracting completed. shardulm94.trailing-spaces
+[2022-08-24 22:51:19.265] [sharedprocess] [info] Extension installed successfully: shardulm94.trailing-spaces
