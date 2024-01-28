@@ -1,0 +1,16 @@
+[init]
+	defaultBranch = main
+[user]
+	name = lemonnuggets
+	email = 63046776+lemonnuggets@users.noreply.github.com
+	signingkey = A7C8A3A7AB63DD3E
+[commit]
+	gpgsign = true
+[credential]
+	credentialStore = gpg
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential

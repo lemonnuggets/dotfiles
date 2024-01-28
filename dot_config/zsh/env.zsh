@@ -1,0 +1,59 @@
+# XDG BASE DIRECTORY SPEC
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_DATA_DIRS="/usr/local/share:/usr/share"
+export XDG_CONFIG_DIRS="/etc/xdg"
+
+# EDITOR
+EDITOR="nvim"
+VISUAL="nvim"
+
+# BROWSER
+BROWSER="firefox"
+
+# TERMINAL
+TERM="alacritty"
+
+# ZSH History
+export HISTFILE="$XDG_STATE_HOME/zsh/history"
+
+# FNM
+export PATH="/home/adam/.local/share/fnm:$PATH"
+
+# PIPX
+export PATH="/home/adam/.local/bin:$PATH"
+
+# GPG
+export GPG_TTY=$(tty)
+
+# go 
+export GOPATH="$XDG_DATA_HOME/go"
+export PATH="$GOPATH/bin:$PATH"
+
+# jupyter
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
+
+# python
+export PYTHONSTARTUP="/etc/python/pythonrc"
+
+# pass
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
+
+# npm/node
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+npm_prefix="$XDG_DATA_HOME/npm"
+export NODE_PATH="$npm_prefix/lib/node_modules:$NODE_PATH"
+export PATH="$npm_prefix/bin:$PATH"
+
+# vim
+export GVIMINIT='let $MYGVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/gvimrc" : "$XDG_CONFIG_HOME/nvim/init.gvim" | so $MYGVIMRC'
+export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$XDG_CONFIG_HOME/nvim/init.lua" | so $MYVIMRC'
+
+# lein
+export LEIN_HOME="$XDG_DATA_HOME/lein"
+
+# android
+export ANDROID_HOME="$XDG_DATA_HOME/android"
+alias adb='HOME="$XDG_DATA_HOME"/android adb'

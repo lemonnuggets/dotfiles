@@ -1,0 +1,22 @@
+source "$ZDOTDIR/env.zsh"
+source "$ZDOTDIR/alias.zsh"
+fpath=($ZDOTDIR/completions "${fpath[@]}")
+
+# Lines configured by zsh-newuser-install
+HISTFILE="$XDG_STATE_HOME/.zhistory"
+HISTSIZE=10000
+SAVEHIST=2000000
+setopt autocd
+bindkey -v
+# End of lines configured by zsh-newuser-install
+
+zstyle :compinstall filename "$ZDOTDIR/.zshrc"
+
+autoload -Uz compinit
+compinit
+
+# fnm
+eval "$(fnm env --use-on-cd)"
+
+# source "$ZDOTDIR/prompt.zsh"
+eval "$(starship init zsh)"
