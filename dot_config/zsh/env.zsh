@@ -20,15 +20,15 @@ TERM="alacritty"
 export HISTFILE="$XDG_STATE_HOME/zsh/history"
 
 # FNM
-export PATH="/home/adam/.local/share/fnm:$PATH"
+export PATH="$XDG_DATA_HOME/fnm:$PATH"
 
 # PIPX
-export PATH="/home/adam/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # GPG
 export GPG_TTY=$(tty)
 
-# go 
+# go
 export GOPATH="$XDG_DATA_HOME/go"
 export PATH="$GOPATH/bin:$PATH"
 
