@@ -17,6 +17,8 @@ compinit
 
 {{ if eq .tools.node_version_manager "nvm" }}
 # nvm
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 {{ else if eq .tools.node_version_manager "fnm" }}
 # fnm
 eval "$(fnm env --use-on-cd)"
