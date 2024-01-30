@@ -15,8 +15,14 @@ zstyle :compinstall filename "$ZDOTDIR/.zshrc"
 autoload -Uz compinit
 compinit
 
+{{ if eq .tools.node_version_manager "nvm" }}
+# nvm
+{{ else if eq .tools.node_version_manager "fnm" }}
 # fnm
 eval "$(fnm env --use-on-cd)"
+{{ else }}
+# .tools.node_version_manager unset
+{{ end }}
 
 # source "$ZDOTDIR/prompt.zsh"
 eval "$(starship init zsh)"

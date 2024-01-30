@@ -1,5 +1,6 @@
 [init]
 	defaultBranch = main
+{{ if eq .chezmoi.os "linux" }}
 [user]
 	name = lemonnuggets
 	email = 63046776+lemonnuggets@users.noreply.github.com
@@ -14,3 +15,11 @@
 [credential "https://gist.github.com"]
 	helper =
 	helper = !/usr/bin/gh auth git-credential
+{{ else if eq .chezmoi.os "darwin" }}
+[user]
+	name = Adam Jijo
+	email = 158173116+adam-jijo-swym@users.noreply.github.com
+	signingKey = ~/.ssh/id_ed25519.pub
+[gpg]
+	format = ssh
+{{ end }}
