@@ -31,6 +31,7 @@
   "nvim-lspconfig": { "branch": "master", "commit": "b901432100112c6d356f760be14ab1b2a44fdca0" },
   "nvim-lua-gf": { "branch": "main", "commit": "ca712497b2bab6351518917be219e9bfd8d63e4f" },
   "nvim-surround": { "branch": "main", "commit": "703ec63aa798e5e07d309b35e42def34bebe0174" },
+  "nvim-tmux-navigation": { "branch": "main", "commit": "4898c98702954439233fdaf764c39636681e2861" },
   "nvim-treesitter": { "branch": "master", "commit": "5f950cdcb82d2cf74e6b30338897b3a4897f52b3" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "19a91a38b02c1c28c14e0ba468d20ae1423c39b2" },
   "onedark.nvim": { "branch": "master", "commit": "1230aaf2a427b2c5b73aba6e4a9a5881d3e69429" },
@@ -45,5 +46,6 @@
   "vim-sexp": { "branch": "master", "commit": "14464d4580af43424ed8f2614d94e62bfa40bb4d" },
   "vim-sexp-mappings-for-regular-people": { "branch": "master", "commit": "cc5923e357373ea6ef0c13eae82f44e6b9b1d374" },
   "vim-sleuth": { "branch": "master", "commit": "1cc4557420f215d02c4d2645a748a816c220e99b" },
+  "vimux": { "branch": "master", "commit": "616fcb4799674a7a809b14ca2dc155bb6ba25788" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
 }

@@ -9,7 +9,7 @@ luasnip.config.setup {}
 cmp.setup.cmdline({ '/', '?' }, {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
-    { name = 'buffer' }
+    { name = 'buffer' },
   },
 })
 
@@ -17,27 +17,26 @@ cmp.setup.cmdline({ '/', '?' }, {
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-      { name = 'path' }
-    },
+    { name = 'path' },
+  }, {
     {
-      {
-        name = 'cmdline',
-        option = {
-          ignore_cmds = { 'Man', '!' }
-        }
-      }
-    }),
+      name = 'cmdline',
+      option = {
+        ignore_cmds = { 'Man', '!' },
+      },
+    },
+  }),
   enabled = function()
     -- Set of commands where cmp will be disabled
     local disabled = {
-      IncRename = true
+      IncRename = true,
     }
     -- Get first word of cmdline
-    local cmd = vim.fn.getcmdline():match("%S+")
+    local cmd = vim.fn.getcmdline():match '%S+'
     -- Return true if cmd isn't disabled
     -- else call/return cmp.close(), which returns false
     return not disabled[cmd] or cmp.close()
-  end
+  end,
 })
 
 cmp.setup {
@@ -88,7 +87,7 @@ cmp.setup {
     { name = 'conjure' },
     { name = 'nvim_lsp_signature_help' },
     { name = 'path' },
-    { name = 'buffer' }
+    { name = 'buffer' },
   },
 }
 -- vim: ts=2 sts=2 sw=2 et
