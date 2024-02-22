@@ -1,6 +1,9 @@
 source "$ZDOTDIR/env.zsh"
 source "$ZDOTDIR/alias.zsh"
 fpath=($ZDOTDIR/completions "${fpath[@]}")
+{{ if eq .tools.node_version_manager "asdf" }}
+fpath=(${ASDF_DIR}/completions $fpath)
+{{ end }}
 
 # Lines configured by zsh-newuser-install
 HISTFILE="$XDG_STATE_HOME/.zhistory"
@@ -12,6 +15,9 @@ bindkey -v
 
 zstyle :compinstall filename "$ZDOTDIR/.zshrc"
 
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
+
 autoload -Uz compinit
 compinit
 
@@ -22,6 +28,7 @@ export NVM_DIR="$HOME/.config/nvm"
 {{ else if eq .tools.node_version_manager "fnm" }}
 # fnm
 eval "$(fnm env --use-on-cd)"
+{{ else if eq .tools.node_version_manager "asdf" }}
 {{ else }}
 # .tools.node_version_manager unset
 {{ end }}
@@ -30,3 +37,6 @@ eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"
 
 [ -f $ZDOTDIR/.fzf.zsh ] && source $ZDOTDIR/.fzf.zsh
+
+eval "$(zoxide init zsh --cmd cd)"
+. "$HOME/.asdf/asdf.sh"

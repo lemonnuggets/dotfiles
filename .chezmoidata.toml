@@ -1,2 +1,2 @@
 [tools]
-node_version_manager = "nvm"
+node_version_manager = "asdf"
