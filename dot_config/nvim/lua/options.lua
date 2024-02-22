@@ -50,9 +50,8 @@ vim.o.softtabstop = 4
 
 vim.o.scrolloff = 8
 
-vim.o.colorcolumn = "80"
+vim.o.colorcolumn = '80'
 
--- -- show line and column number
 -- vim.o.ruler = true
 --
 -- -- makes sign column always one column with signs and line number

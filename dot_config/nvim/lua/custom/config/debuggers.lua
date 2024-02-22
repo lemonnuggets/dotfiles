@@ -1,2 +1,2 @@
-local debuggers = { 'debugpy', 'delve' }
+local debuggers = { 'debugpy', 'delve', 'js-debug-adapter' }
 return debuggers

@@ -16,7 +16,7 @@ for ft, _ in pairs(linters) do
   if not ft == 'markdown' then
     table.insert(linters[ft], 'codespell')
   end
-  table.insert(linters[ft], 'woke')
-  -- table.insert(linters[ft], "editorconfig-checker")
+  -- table.insert(linters[ft], 'woke')
+  table.insert(linters[ft], 'editorconfig-checker')
 end
 return linters

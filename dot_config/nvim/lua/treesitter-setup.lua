@@ -22,6 +22,7 @@ vim.defer_fn(function()
       'html',
       'css',
       'fennel',
+      -- 'liquid',
     },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
