@@ -28,7 +28,14 @@ vim.defer_fn(function()
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
 
-    highlight = { enable = true },
+    highlight = {
+      disable = function()
+        -- check if 'filetype' option includes 'chezmoitmpl'
+        if string.find(vim.bo.filetype, 'chezmoitmpl') then
+          return true
+        end
+      end,
+    },
     indent = { enable = true },
     incremental_selection = {
       enable = true,

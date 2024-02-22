@@ -17,11 +17,13 @@
 	helper = !/usr/bin/gh auth git-credential
 {{ else if eq .chezmoi.os "darwin" }}
 [user]
-	name = Adam Jijo
-	email = 158173116+adam-jijo-swym@users.noreply.github.com
+	name = lemonnuggets
+	email = 63046776+lemonnuggets@users.noreply.github.com
 	signingKey = ~/.ssh/id_ed25519.pub
 [commit]
 	gpgsign = true
 [gpg]
 	format = ssh
+[includeIf "gitdir:~/Development/work/"]
+	path = "~/Development/work/.gitconfig"
 {{ end }}
