@@ -1,5 +1,13 @@
+[core]
+	editor = "nvim"
 [init]
 	defaultBranch = main
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[push]
+	autoSetupRemote = true
 {{ if eq .chezmoi.os "linux" }}
 [user]
 	name = lemonnuggets

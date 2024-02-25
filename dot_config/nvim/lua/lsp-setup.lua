@@ -30,18 +30,6 @@ local on_attach = function(_, bufnr)
   nmap('<leader>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, '[W]orkspace [L]ist Folders')
-
-  -- -- Create a command `:Format` local to the LSP buffer
-  -- vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-  --   vim.lsp.buf.format()
-  -- end, { desc = 'Format current buffer with LSP' })
-  --
-  -- vim.api.nvim_create_autocmd('BufWritePre', {
-  --   buffer = vim.fn.bufnr(),
-  --   callback = function()
-  --     vim.lsp.buf.format({ timeout_ms = 3000 })
-  --   end,
-  -- })
 end
 
 vim.api.nvim_create_autocmd('BufEnter', {
@@ -56,6 +44,11 @@ vim.api.nvim_create_autocmd('BufEnter', {
   end,
   desc = "Turns off LSP for Conjure's buffer",
 })
+
+vim.diagnostic.config {
+  virtual_text = false,
+  severity_sort = true,
+}
 
 -- document existing key chains
 require('which-key').register {

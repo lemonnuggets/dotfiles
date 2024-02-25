@@ -10,7 +10,7 @@ local linters = {
   sh = { 'shellcheck' },
   markdown = { 'markdownlint', 'vale' },
   yaml = { 'yamllint' },
-  gitcommit = { 'write-good' },
+  gitcommit = { 'write_good' },
 }
 for ft, _ in pairs(linters) do
   if not ft == 'markdown' then

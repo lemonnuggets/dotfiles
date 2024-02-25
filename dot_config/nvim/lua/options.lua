@@ -52,6 +52,8 @@ vim.o.scrolloff = 8
 
 vim.o.colorcolumn = '80'
 
+vim.o.cursorline = true
+
 -- vim.o.ruler = true
 --
 -- -- makes sign column always one column with signs and line number
