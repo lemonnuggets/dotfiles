@@ -1,11 +1,12 @@
 return {
   'windwp/nvim-autopairs',
   event = 'InsertEnter',
-  opts = {}, -- this is equalent to setup({}) function
   dependencies = {
     'hrsh7th/nvim-cmp',
   },
-  init = function()
+  config = function()
+    local autopairs = require 'nvim-autopairs'
+    autopairs.setup {}
     -- If you want insert `(` after select function or method item
     local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
     local cmp = require 'cmp'

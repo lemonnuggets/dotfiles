@@ -18,7 +18,7 @@ return {
       desc = '[F]ormat buffer',
     },
   },
-  init = function()
+  config = function()
     local conform = require 'conform'
     conform.setup {
       formatters_by_ft = formatters,
@@ -37,16 +37,13 @@ return {
             slow_format_filetypes[vim.bo[bufnr].filetype] = true
           end
         end
-
         return { timeout_ms = 500, lsp_fallback = true }, on_format
       end,
       format_after_save = function(bufnr)
         if not slow_format_filetypes[vim.bo[bufnr].filetype] then
           return
         end
-        return {
-          lsp_fallback = true,
-        }
+        return { lsp_fallback = true }
       end,
       -- Customize formatters
       formatters = {},
@@ -89,10 +86,7 @@ return {
           local line_nums = line:match '%+.- '
           if line_nums:find ',' then
             local _, _, first, second = line_nums:find '(%d+),(%d+)'
-            table.insert(ranges, {
-              start = { tonumber(first), 0 },
-              ['end'] = { tonumber(first) + tonumber(second), 0 },
-            })
+            table.insert(ranges, { start = { tonumber(first), 0 }, ['end'] = { tonumber(first) + tonumber(second), 0 } })
           else
             local first = tonumber(line_nums:match '%d+')
             table.insert(ranges, {
