@@ -19,6 +19,9 @@ alias ltime='ls -lAahtF --color=auto'
 # Gets a total recursirve count of existing files, no folders.
 alias lcf='find . -type f | wc -l'
 
+# chezmoi
+alias cz='chezmoi'
+
 # to create clojure nrepl
 alias clj-nrepl="clojure -Sdeps '{:deps {nrepl {:mvn/version \"0.7.0\"} cider/cider-nrepl {:mvn/version \"0.25.2\"}}}' -m nrepl.cmdline --middleware '[\"cider.nrepl/cider-middleware\"]'"
 
@@ -26,4 +29,3 @@ alias clj-nrepl="clojure -Sdeps '{:deps {nrepl {:mvn/version \"0.7.0\"} cider/ci
 # https://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo
 # archived link: https://web.archive.org/web/20231207161629/https://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo
 alias sudo="sudo "
-

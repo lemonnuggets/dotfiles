@@ -217,7 +217,7 @@ require('lazy').setup({
   --       Uncomment any of the lines below to enable them.
   -- kickstart.plugins.autoformat not required anymore. using conform instead.
   -- require 'kickstart.plugins.autoformat',
-  require 'kickstart.plugins.debug',
+  -- require 'kickstart.plugins.debug',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
@@ -226,6 +226,8 @@ require('lazy').setup({
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
   { import = 'custom.plugins' },
-}, {})
+}, {
+  change_detection = { notify = false },
+})
 
 -- vim: ts=2 sts=2 sw=2 et
