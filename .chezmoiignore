@@ -1,3 +1,12 @@
-{{ if ne .chezmoi.os "darwin"}}
-./private_dot_local/private_share/cargo/config
-{{ end}}
+{{ if ne .chezmoi.os "darwin" }}
+.local/share/cargo/config
+{{ end }}
+{{ if ne .chezmoi.os "linux" }}
+.config/i3/
+.config/i3status/
+.config/picom/
+.config/xdg-desktop-portal/
+{{ end }}
+{{ if ne .tools.node_version_manager "asdf" }}
+.config/asdf/asdfrc
+{{ end }}

@@ -15,6 +15,9 @@ cmp.setup.cmdline({ '/', '?' }, {
 
 -- `:` cmdline setup.
 cmp.setup.cmdline(':', {
+  -- view = {
+  --   entries = { name = 'custom', selection_order = 'near_cursor' },
+  -- },
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
     { name = 'path' },
@@ -39,6 +42,7 @@ cmp.setup.cmdline(':', {
   end,
 })
 
+local lspkind = require 'lspkind'
 local select_opts = { behavior = cmp.SelectBehavior.Select }
 cmp.setup {
   snippet = {
@@ -51,7 +55,7 @@ cmp.setup {
     documentation = cmp.config.window.bordered(),
   },
   completion = {
-    completeopt = 'menu,menuone,preview,noinsert,noselect',
+    completeopt = 'menu,menuone',
   },
   mapping = cmp.mapping.preset.insert {
     ['<C-n>'] = cmp.mapping.select_next_item(select_opts),
@@ -59,32 +63,32 @@ cmp.setup {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete {},
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = false,
+    ['<C-y>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Insert,
+      select = true,
     },
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item(select_opts)
-      elseif luasnip.expand_or_locally_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item(select_opts)
-      elseif luasnip.locally_jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
+    -- ['<Tab>'] = cmp.mapping(function(fallback)
+    --   if cmp.visible() then
+    --     cmp.select_next_item(select_opts)
+    --   elseif luasnip.expand_or_locally_jumpable() then
+    --     luasnip.expand_or_jump()
+    --   else
+    --     fallback()
+    --   end
+    -- end, { 'i', 's' }),
+    -- ['<S-Tab>'] = cmp.mapping(function(fallback)
+    --   if cmp.visible() then
+    --     cmp.select_prev_item(select_opts)
+    --   elseif luasnip.locally_jumpable(-1) then
+    --     luasnip.jump(-1)
+    --   else
+    --     fallback()
+    --   end
+    -- end, { 'i', 's' }),
   },
   sources = cmp.config.sources({
-    { name = 'conjure' },
     { name = 'nvim_lsp' },
+    { name = 'conjure' },
     { name = 'nvim_lsp_signature_help' },
     { name = 'luasnip' },
     { name = 'path' },
@@ -92,20 +96,69 @@ cmp.setup {
     { name = 'buffer', keyword_length = 3 },
   }),
   formatting = {
-    fields = { 'abbr', 'menu', 'kind' },
+    fields = { 'menu', 'abbr', 'kind' },
     format = function(entry, item)
       local menu_icon = {
-        conjure = '🔮',
-        nvim_lsp = '💡',
-        nvim_lsp_signature_help = '📝',
-        luasnip = '🌟',
-        buffer = '📄',
-        path = '📁',
+        nvim_lsp = '󰌶',
+        conjure = '󰘧',
+        nvim_lsp_signature_help = '󰊕',
+        luasnip = '',
+        path = '',
+        buffer = '',
+        cmdline = '',
       }
+      local menu_hl_group = {
+        nvim_lsp = 'CmpItemMenuLSP',
+        conjure = 'CmpItemMenuConjure',
+        nvim_lsp_signature_help = 'CmpItemMenuSignature',
+        luasnip = 'CmpItemMenuSnippet',
+        path = 'CmpItemMenuPath',
+        buffer = 'CmpItemMenuBuffer',
+      }
+      item.menu = menu_icon[entry.source.name] or string.format('%s', entry.source.name)
 
-      item.menu = menu_icon[entry.source.name]
+      item.menu_hl_group = menu_hl_group[entry.source.name] or 'CmpItemMenu'
+
+      --- Adaptive Fixed Width (https://github.com/hrsh7th/nvim-cmp/discussions/609#discussioncomment-5727678) ---
+
+      -- Set the fixed width of the completion menu to 60 characters.
+      -- fixed_width = 20
+
+      -- Set 'fixed_width' to false if not provided.
+      fixed_width = fixed_width or false
+
+      local label = item.abbr
+
+      if fixed_width then
+        vim.o.pumwidth = fixed_width
+      end
+      local win_width = vim.api.nvim_win_get_width(0)
+      local max_content_width = fixed_width and fixed_width - 10 or math.floor(win_width * 0.2)
+      if #label > max_content_width then
+        item.abbr = vim.fn.strcharpart(label, 0, max_content_width - 3) .. '...'
+      else
+        item.abbr = label .. (' '):rep(max_content_width - #label)
+      end
+
+      item.kind_symbol = (lspkind.symbolic or lspkind.get_symbol)(item.kind)
+      item.kind = ' ' .. item.kind_symbol .. ' ' .. item.kind
       return item
     end,
+    -- lspkind.cmp_format {
+    --   mode = 'symbol',
+    --   preset = 'codicons',
+    --   maxwidth = 50,
+    --   ellipsis_char = '...',
+    --   show_labelDetails = false,
+    --   menu = {
+    --     nvim_lsp = '󰌶',
+    --     conjure = '󰘧',
+    --     nvim_lsp_signature_help = '󰊕',
+    --     luasnip = '',
+    --     path = '',
+    --     buffer = '',
+    --   },
+    -- },
   },
 }
 -- vim: ts=2 sts=2 sw=2 et

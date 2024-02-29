@@ -8,6 +8,7 @@ local linters = {
   json = { 'jsonlint' },
   lua = { 'selene' },
   sh = { 'shellcheck' },
+  clojure = { 'clj-kondo', 'joker' },
   markdown = { 'markdownlint', 'vale' },
   yaml = { 'yamllint' },
   gitcommit = { 'write_good' },
