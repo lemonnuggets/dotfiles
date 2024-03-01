@@ -32,19 +32,6 @@ local on_attach = function(_, bufnr)
   end, '[W]orkspace [L]ist Folders')
 end
 
-vim.api.nvim_create_autocmd('BufEnter', {
-  pattern = 'conjure-log*',
-  callback = function()
-    -- Detach all LSP clients from Conjure log files
-    -- and disable diagnostics if they're on
-    local clients = vim.lsp.get_active_clients()
-    for _, c in ipairs(clients) do
-      vim.lsp.buf_detach_client(0, c.id)
-    end
-  end,
-  desc = "Turns off LSP for Conjure's buffer",
-})
-
 vim.diagnostic.config {
   virtual_text = false,
   severity_sort = true,
