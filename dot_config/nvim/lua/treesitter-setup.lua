@@ -35,6 +35,7 @@ vim.defer_fn(function()
           return true
         end
       end,
+      enable = true,
     },
     indent = { enable = true },
     incremental_selection = {
