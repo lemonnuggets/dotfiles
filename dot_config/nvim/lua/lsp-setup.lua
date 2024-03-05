@@ -72,7 +72,7 @@ mason_lspconfig.setup()
 --
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
-local servers = require 'custom.config.lspservers'
+local language_servers = require 'custom.config.language_servers'
 
 -- Setup neovim lua configuration
 require('neodev').setup()
@@ -83,7 +83,7 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Ensure the servers above are installed
 mason_lspconfig.setup {
-  ensure_installed = vim.tbl_keys(servers),
+  ensure_installed = vim.tbl_keys(language_servers),
 }
 
 local lspconfig = require 'lspconfig'
@@ -92,10 +92,10 @@ mason_lspconfig.setup_handlers {
     lspconfig[server_name].setup {
       capabilities = capabilities,
       on_attach = on_attach,
-      settings = servers[server_name],
-      filetypes = (servers[server_name] or {}).filetypes,
-      handlers = (servers[server_name] or {}).handlers,
-      init_options = (servers[server_name] or {}).init_options,
+      settings = language_servers[server_name],
+      filetypes = (language_servers[server_name] or {}).filetypes,
+      handlers = (language_servers[server_name] or {}).handlers,
+      init_options = (language_servers[server_name] or {}).init_options,
     }
   end,
 }

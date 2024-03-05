@@ -18,6 +18,7 @@ require('lazy').setup({
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
+    event = 'VeryLazy',
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
       'williamboman/mason.nvim',
@@ -35,6 +36,7 @@ require('lazy').setup({
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
+    event = 'InsertEnter',
     dependencies = {
       -- Snippet Engine & its associated nvim-cmp source
       'L3MON4D3/LuaSnip',
@@ -158,19 +160,19 @@ require('lazy').setup({
   --   end,
   -- },
 
-  {
-    -- Set lualine as statusline
-    'nvim-lualine/lualine.nvim',
-    -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = false,
-        theme = 'onedark',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
-  },
+  -- {
+  --   -- Set lualine as statusline
+  --   'nvim-lualine/lualine.nvim',
+  --   -- See `:help lualine.txt`
+  --   opts = {
+  --     options = {
+  --       icons_enabled = false,
+  --       theme = 'onedark',
+  --       component_separators = '|',
+  --       section_separators = '',
+  --     },
+  --   },
+  -- },
 
   {
     -- Add indentation guides even on blank lines
@@ -188,6 +190,7 @@ require('lazy').setup({
   {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
+    event = 'VeryLazy',
     dependencies = {
       'nvim-lua/plenary.nvim',
       -- Fuzzy Finder Algorithm which requires local dependencies to be built.

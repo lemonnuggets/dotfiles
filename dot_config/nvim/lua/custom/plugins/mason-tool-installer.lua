@@ -2,7 +2,7 @@
 local linters = require 'custom.config.linters'
 local debuggers = require 'custom.config.debuggers'
 local formatters = require 'custom.config.formatters'
-local lspservers = require 'custom.config.lspservers'
+local language_servers = require 'custom.config.language_servers'
 local dontInstall = {
   -- not real formatters, but pseudo-formatters from conform.nvim
   'trim_whitespace',
@@ -54,7 +54,7 @@ return {
   },
   config = function()
     local myTools = toolsToAutoinstall(linters, formatters, debuggers, dontInstall)
-    vim.list_extend(myTools, vim.tbl_keys(lspservers))
+    vim.list_extend(myTools, vim.tbl_keys(language_servers))
     applySubstitutions(myTools, substitutions)
 
     require('mason-tool-installer').setup {

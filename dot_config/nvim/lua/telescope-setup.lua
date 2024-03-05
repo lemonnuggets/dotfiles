@@ -1,6 +1,12 @@
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
+  pickers = {
+    find_files = {
+      -- find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
+      -- hidden = true,
+    },
+  },
   defaults = {
     mappings = {
       i = {

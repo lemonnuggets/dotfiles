@@ -15,9 +15,6 @@ cmp.setup.cmdline({ '/', '?' }, {
 
 -- `:` cmdline setup.
 cmp.setup.cmdline(':', {
-  -- view = {
-  --   entries = { name = 'custom', selection_order = 'near_cursor' },
-  -- },
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
     { name = 'path' },
@@ -36,8 +33,7 @@ cmp.setup.cmdline(':', {
     }
     -- Get first word of cmdline
     local cmd = vim.fn.getcmdline():match '%S+'
-    -- Return true if cmd isn't disabled
-    -- else call/return cmp.close(), which returns false
+
     return not disabled[cmd] or cmp.close()
   end,
 })
@@ -67,24 +63,16 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Insert,
       select = true,
     },
-    -- ['<Tab>'] = cmp.mapping(function(fallback)
-    --   if cmp.visible() then
-    --     cmp.select_next_item(select_opts)
-    --   elseif luasnip.expand_or_locally_jumpable() then
-    --     luasnip.expand_or_jump()
-    --   else
-    --     fallback()
-    --   end
-    -- end, { 'i', 's' }),
-    -- ['<S-Tab>'] = cmp.mapping(function(fallback)
-    --   if cmp.visible() then
-    --     cmp.select_prev_item(select_opts)
-    --   elseif luasnip.locally_jumpable(-1) then
-    --     luasnip.jump(-1)
-    --   else
-    --     fallback()
-    --   end
-    -- end, { 'i', 's' }),
+    ['<C-l>'] = cmp.mapping(function()
+      if luasnip.expand_or_locally_jumpable() then
+        luasnip.expand_or_jump()
+      end
+    end, { 'i', 's' }),
+    ['<C-h>'] = cmp.mapping(function()
+      if luasnip.locally_jumpable(-1) then
+        luasnip.jump(-1)
+      end
+    end, { 'i', 's' }),
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
@@ -144,21 +132,6 @@ cmp.setup {
       item.kind = ' ' .. item.kind_symbol .. ' ' .. item.kind
       return item
     end,
-    -- lspkind.cmp_format {
-    --   mode = 'symbol',
-    --   preset = 'codicons',
-    --   maxwidth = 50,
-    --   ellipsis_char = '...',
-    --   show_labelDetails = false,
-    --   menu = {
-    --     nvim_lsp = '󰌶',
-    --     conjure = '󰘧',
-    --     nvim_lsp_signature_help = '󰊕',
-    --     luasnip = '',
-    --     path = '',
-    --     buffer = '',
-    --   },
-    -- },
   },
 }
 -- vim: ts=2 sts=2 sw=2 et

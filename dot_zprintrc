@@ -1,3 +1,10 @@
 {:cwd-zprintrc? true, :search-config? true}
+; {:search-config? true
+;  :cwd-zprintrc? true
+;  :style         [:community
+;                  :justified
+;                  :how-to-ns
+;                  :respect-nl]
+;  :map           {:comma? false}}
 
 ; vi: set ft=clojure :

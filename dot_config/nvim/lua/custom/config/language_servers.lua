@@ -1,4 +1,4 @@
-local lspservers = {
+local language_servers = {
   -- rust_analyzer = {},
   clangd = {},
   gopls = {},
@@ -60,4 +60,4 @@ local lspservers = {
     },
   },
 }
-return lspservers
+return language_servers
