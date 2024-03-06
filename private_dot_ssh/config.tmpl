@@ -1,12 +1,12 @@
 Include /Users/adam/.colima/ssh_config
-{{ if eq .chezmoi.os "linux" }}
+{{- if eq .chezmoi.os "linux" }}
 Host github.com
   HostName github.com
   AddKeysToAgent yes
   UseKeychain yes
   IdentityFile ~/.ssh/id_ed25519
   IdentitiesOnly yes
-{{ else if eq .chezmoi.os "darwin" }}
+{{- else if eq .chezmoi.os "darwin" }}
 # default account: adam-jijo-swym
 Host github.com
   HostName github.com
@@ -22,4 +22,4 @@ Host github-lemonnuggets
   UseKeychain yes
   IdentityFile ~/.ssh/lemonnuggets
   IdentitiesOnly yes
-{{ end }}
+{{- end }}

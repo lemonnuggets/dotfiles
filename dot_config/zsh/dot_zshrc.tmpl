@@ -1,9 +1,9 @@
 source "$ZDOTDIR/env.zsh"
 source "$ZDOTDIR/alias.zsh"
 fpath=($ZDOTDIR/completions "${fpath[@]}")
-{{ if eq .tools.node_version_manager "asdf" }}
+{{- if eq .tools.node_version_manager "asdf" }}
 fpath=(${ASDF_DIR}/completions $fpath)
-{{ end }}
+{{- end }}
 
 # Lines configured by zsh-newuser-install
 HISTFILE="$XDG_STATE_HOME/.zhistory"
@@ -21,17 +21,17 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 autoload -Uz compinit
 compinit
 
-{{ if eq .tools.node_version_manager "nvm" }}
+{{- if eq .tools.node_version_manager "nvm" }}
 # nvm
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-{{ else if eq .tools.node_version_manager "fnm" }}
+{{- else if eq .tools.node_version_manager "fnm" }}
 # fnm
 eval "$(fnm env --use-on-cd)"
-{{ else if eq .tools.node_version_manager "asdf" }}
-{{ else }}
+{{- else if eq .tools.node_version_manager "asdf" }}
+{{- else }}
 # .tools.node_version_manager unset
-{{ end }}
+{{- end }}
 
 # source "$ZDOTDIR/prompt.zsh"
 eval "$(starship init zsh)"

@@ -8,7 +8,7 @@
 	sort = -committerdate
 [push]
 	autoSetupRemote = true
-{{ if eq .chezmoi.os "linux" }}
+{{- if eq .chezmoi.os "linux" }}
 [user]
 	name = lemonnuggets
 	email = 63046776+lemonnuggets@users.noreply.github.com
@@ -23,7 +23,7 @@
 [credential "https://gist.github.com"]
 	helper =
 	helper = !/usr/bin/gh auth git-credential
-{{ else if eq .chezmoi.os "darwin" }}
+{{- else if eq .chezmoi.os "darwin" }}
 [user]
 	name = lemonnuggets
 	email = 63046776+lemonnuggets@users.noreply.github.com
@@ -34,4 +34,4 @@
 	format = ssh
 [includeIf "gitdir:~/Development/work/"]
 	path = ~/.config/git/config.work
-{{ end }}
+{{- end }}

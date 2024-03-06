@@ -11,6 +11,14 @@ return {
         return vim.startswith(name, 'node_modules') or vim.startswith(name, '.DS_Store')
       end,
     },
+    keymaps = {
+      ['<C-s>'] = false,
+      ['<localleader>s'] = 'actions.select_vsplit',
+      ['<C-h>'] = false,
+      ['<localleader>h'] = 'actions.select_split',
+      ['<C-l>'] = false,
+      ['<localleader>l'] = 'actions.refresh',
+    },
   },
   init = function()
     vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
