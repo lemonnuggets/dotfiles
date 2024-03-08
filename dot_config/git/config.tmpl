@@ -12,7 +12,7 @@
 [user]
 	name = lemonnuggets
 	email = 63046776+lemonnuggets@users.noreply.github.com
-	signingkey = A7C8A3A7AB63DD3E
+	signingKey = {{ .gpg.lemonnuggets }}
 [commit]
 	gpgsign = true
 [credential]
@@ -27,11 +27,9 @@
 [user]
 	name = lemonnuggets
 	email = 63046776+lemonnuggets@users.noreply.github.com
-	signingKey = ~/.ssh/lemonnuggets.pub
+	signingKey = {{ .gpg.lemonnuggets }}
 [commit]
 	gpgsign = true
-[gpg]
-	format = ssh
 [includeIf "gitdir:~/Development/work/"]
 	path = ~/.config/git/config.work
 {{- end }}

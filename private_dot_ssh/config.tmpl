@@ -1,4 +1,3 @@
-Include /Users/adam/.colima/ssh_config
 {{- if eq .chezmoi.os "linux" }}
 Host github.com
   HostName github.com
@@ -7,6 +6,8 @@ Host github.com
   IdentityFile ~/.ssh/id_ed25519
   IdentitiesOnly yes
 {{- else if eq .chezmoi.os "darwin" }}
+Include /Users/adam/.colima/ssh_config
+
 # default account: adam-jijo-swym
 Host github.com
   HostName github.com
