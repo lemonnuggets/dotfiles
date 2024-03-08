@@ -1,3 +1,24 @@
+-- -- this is to fix bug: https://github.com/folke/which-key.nvim/issues/476
+vim.api.nvim_create_autocmd('FileType', {
+  desc = 'Set up conjure Which-Key descriptions',
+  group = vim.api.nvim_create_augroup('conjure_mapping_descriptions', { clear = true }),
+  pattern = { 'clojure' },
+  callback = function(e)
+    vim.keymap.set('n', '<localleader>', function()
+      require('which-key').show '\\'
+    end, { buffer = true })
+  end,
+})
+
+vim.api.nvim_create_autocmd('BufNewFile', {
+  group = vim.api.nvim_create_augroup('conjure_log_disable_lsp', { clear = true }),
+  pattern = { 'conjure-log-*' },
+  callback = function(e)
+    vim.diagnostic.disable(0)
+  end,
+  desc = 'Conjure Log disable LSP diagnostics',
+})
+
 return {
   'Olical/conjure',
   ft = { 'clojure', 'fennel', 'python' }, -- etc
@@ -5,16 +26,8 @@ return {
   config = function(_, _)
     require('conjure.main').main()
     require('conjure.mapping')['on-filetype']()
-
-    vim.api.nvim_create_autocmd('BufNewFile', {
-      group = vim.api.nvim_create_augroup('conjure_log_disable_lsp', { clear = true }),
-      pattern = { 'conjure-log-*' },
-      callback = function()
-        vim.diagnostic.disable(0)
-      end,
-      desc = 'Conjure Log disable LSP diagnostics',
-    })
   end,
+
   init = function()
     -- vim.g["conjure#debug"] = true
     vim.g['conjure_log_direction'] = 'vertical'

@@ -1,5 +1,3 @@
--- Set <space> as the leader key
--- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
@@ -32,5 +30,8 @@ require 'lsp-setup'
 -- (completion)
 require 'cmp-setup'
 
--- The line beneath this is called `modeline`. See `:help modeline`
+-- [[ Debug Nvim Events ]]
+-- (debug)
+-- require 'events-debug'
+
 -- vim: ts=2 sts=2 sw=2 et

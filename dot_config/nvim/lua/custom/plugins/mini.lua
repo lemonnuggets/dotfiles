@@ -30,6 +30,44 @@ return { -- Collection of various small independent plugins/modules
       return ''
     end
 
+    require('mini.cursorword').setup()
+
+    require('mini.move').setup {
+      -- Module mappings. Use `''` (empty string) to disable one.
+      mappings = {
+        -- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
+        left = '<M-h>',
+        right = '<M-l>',
+        down = '<M-j>',
+        up = '<M-k>',
+
+        -- Move current line in Normal mode
+        line_left = '<M-h>',
+        line_right = '<M-l>',
+        line_down = '<M-j>',
+        line_up = '<M-k>',
+      },
+    }
+
+    local mini_files = require 'mini.files'
+    mini_files.setup()
+    vim.keymap.set('n', '-', function()
+      mini_files.open()
+    end, { desc = 'Open file explorer' })
+
+    local hipatterns = require 'mini.hipatterns'
+    hipatterns.setup {
+      highlighters = {
+        -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+        fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
+        hack = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
+        todo = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
+        note = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
+
+        -- Highlight hex color strings (`#rrggbb`) using that color
+        hex_color = hipatterns.gen_highlighter.hex_color(),
+      },
+    }
     -- ... and there is more!
     --  Check out: https://github.com/echasnovski/mini.nvim
   end,

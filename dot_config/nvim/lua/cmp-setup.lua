@@ -41,6 +41,9 @@ cmp.setup.cmdline(':', {
 local lspkind = require 'lspkind'
 local select_opts = { behavior = cmp.SelectBehavior.Select }
 cmp.setup {
+  experimental = {
+    ghost_text = true,
+  },
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
