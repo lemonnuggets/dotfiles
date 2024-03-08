@@ -4,6 +4,7 @@ local language_servers = {
   gopls = {},
   pyright = {},
   tsserver = {},
+  emmet_ls = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   clojure_lsp = {
     init_options = {
