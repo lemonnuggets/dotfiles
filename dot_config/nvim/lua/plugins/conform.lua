@@ -54,7 +54,7 @@ vim.api.nvim_create_user_command('FormatDiff', function(e)
   end
 end, { desc = 'Format changed lines' })
 
-local formatters = require 'custom.config.formatters'
+local formatters = require 'config.formatters'
 local slow_format_filetypes = {}
 
 return {

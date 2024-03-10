@@ -1,6 +1,7 @@
 -- reference: https://www.bugsnag.com/blog/tmux-and-vim/
 return {
   'preservim/vimux',
+  event = 'VeryLazy',
   config = function()
     vim.keymap.set('n', '<leader>vp', ':VimuxPromptCommand<CR>', { desc = 'Prompt for a command to run' })
     vim.keymap.set('n', '<leader>vl', ':VimuxRunLastCommand<CR>', { desc = 'Run last command executed by VimuxRunCommand' })

@@ -1,8 +1,8 @@
 -- based on https://github.com/chrisgrieser/.config/blob/7dc36c350976010b32ece078edd581687634811a/nvim/lua/plugins/linter-formatter.lua#L27-L82
-local linters = require 'custom.config.linters'
-local debuggers = require 'custom.config.debuggers'
-local formatters = require 'custom.config.formatters'
-local language_servers = require 'custom.config.language_servers'
+local linters = require 'config.linters'
+local debuggers = require 'config.debuggers'
+local formatters = require 'config.formatters'
+local language_servers = require 'config.language_servers'
 local dontInstall = {
   -- not real formatters, but pseudo-formatters from conform.nvim
   'trim_whitespace',
@@ -48,10 +48,6 @@ return {
   -- auto-install missing linters & formatters
   'WhoIsSethDaniel/mason-tool-installer.nvim',
   event = 'VeryLazy',
-  dependencies = {
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
-  },
   config = function()
     local myTools = toolsToAutoinstall(linters, formatters, debuggers, dontInstall)
     vim.list_extend(myTools, vim.tbl_keys(language_servers))

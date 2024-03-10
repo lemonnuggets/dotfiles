@@ -4,4 +4,6 @@ return {
   'tpope/vim-repeat',
   'guns/vim-sexp',
   'tpope/vim-sexp-mappings-for-regular-people',
+  'tpope/vim-fugitive',
+  'tpope/vim-sleuth',
 }

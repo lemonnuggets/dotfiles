@@ -1,5 +1,6 @@
 return { -- Collection of various small independent plugins/modules
   'echasnovski/mini.nvim',
+  event = 'VeryLazy',
   config = function()
     -- Better Around/Inside textobjects
     --
@@ -68,6 +69,11 @@ return { -- Collection of various small independent plugins/modules
         hex_color = hipatterns.gen_highlighter.hex_color(),
       },
     }
+
+    -- Using Comment.nvim instead of mini.comment due to lack of support for
+    -- block comments
+    -- require('mini.comment').setup()
+
     -- ... and there is more!
     --  Check out: https://github.com/echasnovski/mini.nvim
   end,
