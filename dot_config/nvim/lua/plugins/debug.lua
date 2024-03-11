@@ -50,6 +50,4 @@ return {
     'theHamsta/nvim-dap-virtual-text',
     -- 'nvim-telescope/telescope-dap.nvim',
   },
-
-  { import = 'dap-langs' },
 }

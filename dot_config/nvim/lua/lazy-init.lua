@@ -33,6 +33,7 @@ require('lazy').setup({
   },
 
   { import = 'plugins' },
+  { import = 'dap-langs' },
 }, {
   change_detection = { notify = false },
 })

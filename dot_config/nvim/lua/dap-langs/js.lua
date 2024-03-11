@@ -6,74 +6,58 @@ local js_based_languages = {
   'vue',
 }
 return {
-  'mxsdev/nvim-dap-vscode-js',
+  'Joakker/lua-json5',
+  build = './install.sh',
   ft = js_based_languages, -- REQUIRED for all in dap-langs
   dependencies = {
     'mfussenegger/nvim-dap', -- REQUIRED for all in dap-langs
-    {
-      -- used to parse launch.json if it exists
-      'Joakker/lua-json5',
-      build = './install.sh',
-    },
-    {
-      'microsoft/vscode-js-debug',
-      build = 'npm install --legacy-peer-deps --no-save && npx gulp vsDebugServerBundle && rm -rf out && mv dist out',
-      version = '1.*',
-    },
   },
   config = function()
-    require('dap-vscode-js').setup {
-      -- Path of node executable. Defaults to $NODE_PATH, and then "node"
-      -- node_path = "node",
-
-      -- Path to vscode-js-debug installation.
-      debugger_path = vim.fn.resolve(vim.fn.stdpath 'data' .. '/lazy/vscode-js-debug'),
-
-      -- Command to use to launch the debug server. Takes precedence over "node_path" and "debugger_path"
-      -- debugger_cmd = { "js-debug-adapter" },
-
-      -- which adapters to register in nvim-dap
-      adapters = {
-        'chrome',
-        'pwa-node',
-        'pwa-chrome',
-        'pwa-msedge',
-        'pwa-extensionHost',
-        'node-terminal',
-      },
-
-      -- Path for file logging
-      -- log_file_path = "(stdpath cache)/dap_vscode_js.log",
-
-      -- Logging level for output to file. Set to false to disable logging.
-      -- log_file_level = false,
-
-      -- Logging level for output to console. Set to false to disable console output.
-      -- log_console_level = vim.log.levels.ERROR,
-    }
-
     local dap = require 'dap' -- REQUIRED for all in dap-langs
+
+    dap.adapters['pwa-node'] = {
+      type = 'server',
+      host = 'localhost',
+      port = '${port}',
+      executable = {
+        command = vim.fn.exepath 'js-debug-adapter',
+        args = { '${port}' },
+      },
+    }
 
     for _, language in ipairs(js_based_languages) do
       dap.configurations[language] = {
-        -- Debug single nodejs files
         {
           type = 'pwa-node',
           request = 'launch',
-          name = 'Launch file',
+          name = '[node] Launch file',
           program = '${file}',
-          cwd = vim.fn.getcwd(),
+          cwd = '${workspaceFolder}',
           sourceMaps = true,
-        }, -- Debug nodejs processes (make sure to add --inspect when you run the process)
+        },
         {
           type = 'pwa-node',
           request = 'attach',
-          name = 'Attach',
+          name = '[node] Attach',
           processId = require('dap.utils').pick_process,
-          cwd = vim.fn.getcwd(),
+          cwd = '${workspaceFolder}',
           sourceMaps = true,
         },
-        -- Debug web applications (client side)
+        {
+          type = 'pwa-node',
+          request = 'launch',
+          name = 'Debug Jest Tests',
+          -- trace = true, -- include debugger info
+          runtimeExecutable = 'node',
+          runtimeArgs = {
+            './node_modules/jest/bin/jest.js',
+            '--runInBand',
+          },
+          rootPath = '${workspaceFolder}',
+          cwd = '${workspaceFolder}',
+          console = 'integratedTerminal',
+          internalConsoleOptions = 'neverOpen',
+        },
         {
           type = 'pwa-chrome',
           request = 'launch',
