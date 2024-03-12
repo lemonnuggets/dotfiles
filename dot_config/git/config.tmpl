@@ -1,35 +1,63 @@
 [core]
-	editor = "nvim"
+    editor = "nvim"
 [init]
-	defaultBranch = main
-[column]
-	ui = auto
+    defaultBranch = main
 [branch]
-	sort = -committerdate
+    sort = -committerdate
 [push]
-	autoSetupRemote = true
+    autoSetupRemote = true
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[alias]
+    s = status
+    co = checkout
+    cob = checkout -b
+    del = branch -D
+    unstage = reset HEAD --
+    br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+    l = log --pretty=format:\"%C(magenta)%h%Creset | %s %C(dim green)[%an]%Creset%C(red)%d%Creset\" --abbrev-commit -30 --date=short
+    ld = log --pretty=format:\"%C(magenta)%h%Creset %C(brightblue)(%ad)%Creset | %s %C(dim green)[%an]%Creset%C(red)%d%Creset \" --abbrev-commit -30 --date=short
+    lg = log --pretty=format:\"%C(magenta)%h%Creset - %s %C(dim green)[%an]%Creset%C(red)%d%Creset\" --graph --date=short
+    lgd = log --pretty=format:\"%C(magenta)%h%Creset %C(brightblue)(%ad)%Creset - %s %C(dim green)[%an]%Creset%C(red)%d%Creset\" --graph --date=short
 {{- if eq .chezmoi.os "linux" }}
 [user]
-	name = lemonnuggets
-	email = 63046776+lemonnuggets@users.noreply.github.com
-	signingKey = {{ .gpg.lemonnuggets }}
+    name = lemonnuggets
+    email = 63046776+lemonnuggets@users.noreply.github.com
+    signingKey = {{ .gpg.lemonnuggets }}
 [commit]
-	gpgsign = true
+    gpgsign = true
 [credential]
-	credentialStore = gpg
+    credentialStore = gpg
 [credential "https://github.com"]
-	helper =
-	helper = !/usr/bin/gh auth git-credential
+    helper =
+    helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper =
-	helper = !/usr/bin/gh auth git-credential
+    helper =
+    helper = !/usr/bin/gh auth git-credential
 {{- else if eq .chezmoi.os "darwin" }}
 [user]
-	name = lemonnuggets
-	email = 63046776+lemonnuggets@users.noreply.github.com
-	signingKey = {{ .gpg.lemonnuggets }}
+    name = lemonnuggets
+    email = 63046776+lemonnuggets@users.noreply.github.com
+    signingKey = {{ .gpg.lemonnuggets }}
 [commit]
-	gpgsign = true
+    gpgsign = true
 [includeIf "gitdir:~/Development/work/"]
-	path = ~/.config/git/config.work
+    path = ~/.config/git/config.work
 {{- end }}
+
+; vim: set filetype=gitconfig
