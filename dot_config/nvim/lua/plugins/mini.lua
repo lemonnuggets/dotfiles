@@ -70,6 +70,13 @@ return { -- Collection of various small independent plugins/modules
       },
     }
 
+    local indentscope = require 'mini.indentscope'
+    indentscope.setup {
+      draw = {
+        animation = indentscope.gen_animation.quadratic { easing = 'out', duration = 100, unit = 'total' },
+      },
+    }
+
     -- Using Comment.nvim instead of mini.comment due to lack of support for
     -- block comments
     -- require('mini.comment').setup()
