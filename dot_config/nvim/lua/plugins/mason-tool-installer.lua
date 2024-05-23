@@ -12,6 +12,7 @@ local dontInstall = {
 }
 local substitutions = {
   ['write_good'] = 'write-good',
+  ['xmlformat'] = 'xmlformatter',
 }
 
 ---given the linter- and formatter-list of nvim-lint and conform.nvim, extract a

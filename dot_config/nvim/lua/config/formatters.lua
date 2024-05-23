@@ -13,6 +13,7 @@ local formatters = {
   lua = { 'stylua' },
   markdown = { { 'prettierd', 'prettier' } },
   sh = { 'shellcheck', 'shfmt' },
+  -- xml = { 'xmlformat' },
   ['_'] = { 'trim_whitespace', 'trim_newlines', 'squeeze_blanks' },
 }
 return formatters

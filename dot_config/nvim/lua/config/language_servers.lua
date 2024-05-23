@@ -8,7 +8,7 @@ local language_servers = {
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   clojure_lsp = {
     init_options = {
-      -- using zprint from conform instead
+      -- using formatter from conform instead
       ['document-formatting?'] = false,
       ['document-range-formatting?'] = false,
     },

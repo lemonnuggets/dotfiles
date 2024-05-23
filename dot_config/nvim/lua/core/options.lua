@@ -57,6 +57,18 @@ vim.o.colorcolumn = '80'
 
 vim.o.cursorline = true
 
+vim.diagnostic.config {
+  virtual_text = false,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  float = {
+    border = 'rounded',
+    source = true,
+  },
+  severity_sort = true,
+}
+
 -- vim.o.ruler = true
 --
 -- -- makes sign column always one column with signs and line number
