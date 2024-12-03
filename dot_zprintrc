@@ -1,4 +1,4 @@
-{:cwd-zprintrc? true, :search-config? true}
+{:cwd-zprintrc? true, :search-config? true, :style [:community :justified]}
 ; {:search-config? true
 ;  :cwd-zprintrc? true
 ;  :style         [:community
