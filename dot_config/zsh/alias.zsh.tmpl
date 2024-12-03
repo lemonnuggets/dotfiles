@@ -29,3 +29,24 @@ alias clj-nrepl="clojure -Sdeps '{:deps {nrepl {:mvn/version \"0.7.0\"} cider/ci
 # https://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo
 # archived link: https://web.archive.org/web/20231207161629/https://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo
 alias sudo="sudo "
+
+{{- if eq .chezmoi.os "darwin" }}
+export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+export JAVA_17_HOME=$(/usr/libexec/java_home -v17)
+export JAVA_18_HOME=$(/usr/libexec/java_home -v18)
+export JAVA_19_HOME=$(/usr/libexec/java_home -v19)
+export JAVA_21_HOME=$(/usr/libexec/java_home -v21)
+export JAVA_22_HOME=$(/usr/libexec/java_home -v22)
+
+alias java8='export JAVA_HOME=$JAVA_8_HOME && echo JAVA_HOME set to $JAVA_HOME'
+alias java11='export JAVA_HOME=$JAVA_11_HOME && echo JAVA_HOME set to $JAVA_HOME'
+alias java17='export JAVA_HOME=$JAVA_17_HOME && echo JAVA_HOME set to $JAVA_HOME'
+alias java18='export JAVA_HOME=$JAVA_18_HOME && echo JAVA_HOME set to $JAVA_HOME'
+alias java19='export JAVA_HOME=$JAVA_19_HOME && echo JAVA_HOME set to $JAVA_HOME'
+alias java21='export JAVA_HOME=$JAVA_21_HOME && echo JAVA_HOME set to $JAVA_HOME'
+alias java22='export JAVA_HOME=$JAVA_22_HOME && echo JAVA_HOME set to $JAVA_HOME'
+
+# default to Java 22
+java22
+{{- end }}

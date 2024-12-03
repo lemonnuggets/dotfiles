@@ -1,0 +1,11 @@
+{{- if eq .chezmoi.os "darwin" }}
+function port2process() {
+    local port=$1
+    local process_id=$(sudo lsof -i -P | grep LISTEN | grep :$port | awk '{print $2}')
+    if [[ -n $process_id ]]; then
+        ps $process_id
+    else
+        echo "No process found using port $port"
+    fi
+}
+{{- end }}

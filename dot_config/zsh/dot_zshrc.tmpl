@@ -1,5 +1,6 @@
 source "$ZDOTDIR/env.zsh"
 source "$ZDOTDIR/alias.zsh"
+source "$ZDOTDIR/functions.zsh"
 fpath=($ZDOTDIR/completions "${fpath[@]}")
 {{- if eq .tools.node_version_manager "asdf" }}
 fpath=(${ASDF_DIR}/completions $fpath)
@@ -21,6 +22,10 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 autoload -Uz compinit
 compinit
 
+setopt INC_APPEND_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_FIND_NO_DUPS
+
 {{- if eq .tools.node_version_manager "nvm" }}
 # nvm
 export NVM_DIR="$HOME/.config/nvm"
@@ -40,3 +45,12 @@ eval "$(starship init zsh)"
 
 eval "$(zoxide init zsh --cmd cd)"
 . "$ASDF_DATA_DIR/asdf.sh"
+
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+{{- if eq .chezmoi.os "darwin" }}
+# for azure cli autocomplete
+autoload bashcompinit && bashcompinit
+source $(brew --prefix)/etc/bash_completion.d/az
+{{- end }}
