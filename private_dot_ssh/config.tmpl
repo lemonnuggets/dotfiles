@@ -12,18 +12,20 @@ IdentityFile ~/.ssh/adam-jijo-swym
 # default account: adam-jijo-swym
 Host github.com
   HostName github.com
+  IdentityFile ~/.ssh/adam-jijo-swym
+  User git
   AddKeysToAgent yes
   UseKeychain yes
-  IdentityFile ~/.ssh/adam-jijo-swym
-  IdentitiesOnly yes
+  # IdentitiesOnly yes
 
 # personal account: lemonnuggets
 Host github-lemonnuggets
   HostName github.com
+  IdentityFile ~/.ssh/lemonnuggets
+  User git
   AddKeysToAgent yes
   UseKeychain yes
-  IdentityFile ~/.ssh/lemonnuggets
-  IdentitiesOnly yes
+  # IdentitiesOnly yes
 
 Include config-swym-hosts
 {{- end }}
