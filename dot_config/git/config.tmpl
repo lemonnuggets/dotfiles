@@ -35,6 +35,7 @@
     ld = log --pretty=format:\"%C(magenta)%h%Creset %C(brightblue)(%ad)%Creset | %s %C(dim green)[%an]%Creset%C(red)%d%Creset \" --abbrev-commit -30 --date=short
     lg = log --pretty=format:\"%C(magenta)%h%Creset - %s %C(dim green)[%an]%Creset%C(red)%d%Creset\" --graph --date=short
     lgd = log --pretty=format:\"%C(magenta)%h%Creset %C(brightblue)(%ad)%Creset - %s %C(dim green)[%an]%Creset%C(red)%d%Creset\" --graph --date=short
+    uncommit = reset --soft HEAD^
 {{- if eq .chezmoi.os "linux" }}
 [user]
     name = lemonnuggets
