@@ -13,24 +13,25 @@ vim.api.nvim_create_autocmd('FileType', {
 return {
   'folke/which-key.nvim',
   event = 'VeryLazy',
-  config = function()
-    local whichkey = require 'which-key'
-    whichkey.register {
-      ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-      ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-      ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-      ['<leader>d'] = { name = '[D]ebug', _ = 'which_key_ignore' },
-      ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+  opts = {
+    icons = {
+      mappings = false,
+    },
+  },
+  spec = {
+    { '<leader>', group = 'VISUAL <leader>', mode = { 'n', 'v' } },
+    { '<leader>s', group = '[S]earch' },
+    { '<leader>c', group = '[C]ode', mode = { 'n', 'v' } },
+    { '<leader>r', group = '[R]ename' },
+    { '<leader>d', group = '[D]ebug' },
+    { '<leader>w', group = '[W]orkspace' },
 
-      ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
-      ['<leader>gh'] = { name = '[G]it [H]unk', _ = 'which_key_ignore' },
-      ['<leader>gt'] = { name = '[G]it [T]oggle', _ = 'which_key_ignore' },
-    }
-
-    whichkey.register({
-      ['<leader>'] = { name = 'VISUAL <leader>' },
-      ['<leader>g'] = { '[G]it' },
-      ['<leader>gh'] = { 'Git [H]unk' },
-    }, { mode = 'v' })
-  end,
+    { '<leader>g', group = '[G]it', mode = { 'n', 'v' } },
+    { '<leader>gh', group = '[G]it [H]unk', mode = { 'n', 'v' } },
+    { '<leader>gt', group = '[G]it [T]oggle' },
+  },
+  -- config = function()
+  --   local whichkey = require 'which-key'
+  --   whichkey.register
+  -- end,
 }

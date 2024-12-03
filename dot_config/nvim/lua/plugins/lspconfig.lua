@@ -1,19 +1,26 @@
 -- [[ Configure LSP ]]
 local on_attach = function(_, bufnr)
   --  This function gets run when an LSP connects to a particular buffer.
-  local nmap = function(keys, func, desc)
+  local keymap = function(mode, keys, func, desc)
     if desc then
       desc = 'LSP: ' .. desc
     end
 
-    vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+    vim.keymap.set(mode, keys, func, { buffer = bufnr, desc = desc })
+  end
+
+  local nmap = function(keys, func, desc)
+    keymap('n', keys, func, desc)
+  end
+  local nvmap = function(keys, func, desc)
+    keymap({ 'n', 'v' }, keys, func, desc)
   end
 
   local builtin = require 'telescope.builtin'
   local buf = vim.lsp.buf
 
   nmap('<leader>cr', buf.rename, '[C]ode [R]ename')
-  nmap('<leader>ca', buf.code_action, '[C]ode [A]ction')
+  nvmap('<leader>ca', buf.code_action, '[C]ode [A]ction')
 
   nmap('<leader>cs', builtin.lsp_document_symbols, '[C]ode [S]ymbols')
   nmap('<leader>cd', builtin.lsp_type_definitions, '[C]ode Type [D]efinition')
@@ -44,9 +51,6 @@ return {
 
     -- Status updates for LSP
     'j-hui/fidget.nvim',
-
-    -- Additional lua configuration, makes nvim stuff amazing!
-    'folke/neodev.nvim',
   },
   config = function()
     local mason = require 'mason'
@@ -67,8 +71,6 @@ return {
     --  If you want to override the default filetypes that your language server will attach to you can
     --  define the property 'filetypes' to the map in question.
     local language_servers = require 'config.language_servers'
-
-    require('neodev').setup()
 
     require('fidget').setup {}
 

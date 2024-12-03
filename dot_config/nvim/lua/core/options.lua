@@ -10,7 +10,12 @@ vim.o.relativenumber = true
 vim.o.mouse = 'a'
 
 -- Sync clipboard between OS and Neovim.
-vim.o.clipboard = 'unnamedplus'
+--  Schedule the setting after `UiEnter` because it can increase startup-time.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamedplus'
+end)
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -53,7 +58,7 @@ vim.o.softtabstop = 4
 
 vim.o.scrolloff = 10
 
-vim.o.colorcolumn = '80'
+vim.o.colorcolumn = '120'
 
 vim.o.cursorline = true
 

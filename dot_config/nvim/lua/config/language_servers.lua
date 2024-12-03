@@ -3,8 +3,10 @@ local language_servers = {
   clangd = {},
   gopls = {},
   pyright = {},
-  tsserver = {},
+  ts_ls = {},
   emmet_ls = {},
+  jqls = {},
+  phpactor = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   clojure_lsp = {
     init_options = {

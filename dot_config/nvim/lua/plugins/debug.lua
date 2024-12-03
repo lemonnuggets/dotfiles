@@ -1,5 +1,5 @@
 return {
-  'mfussenegger/nvim-dap',
+  'rcarriga/nvim-dap-ui',
   lazy = true, -- only loaded when one of the dap-langs plugins is loaded
   config = function()
     local dap = require 'dap'
@@ -46,7 +46,8 @@ return {
     require('nvim-dap-virtual-text').setup {}
   end,
   dependencies = {
-    'rcarriga/nvim-dap-ui',
+    'mfussenegger/nvim-dap',
+    'nvim-neotest/nvim-nio',
     'theHamsta/nvim-dap-virtual-text',
     -- 'nvim-telescope/telescope-dap.nvim',
   },
