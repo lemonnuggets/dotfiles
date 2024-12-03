@@ -7,6 +7,7 @@ Host github.com
   IdentitiesOnly yes
 {{- else if eq .chezmoi.os "darwin" }}
 Include /Users/adam/.colima/ssh_config
+IdentityFile ~/.ssh/adam-jijo-swym
 
 # default account: adam-jijo-swym
 Host github.com
@@ -23,4 +24,6 @@ Host github-lemonnuggets
   UseKeychain yes
   IdentityFile ~/.ssh/lemonnuggets
   IdentitiesOnly yes
+
+Include config-swym-hosts
 {{- end }}
