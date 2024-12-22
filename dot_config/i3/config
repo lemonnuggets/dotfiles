@@ -27,6 +27,9 @@ for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+# notification service
+exec_always --no-startup-id dunst #-config ~/.config/dunst/dunstrc
+
 # polkit lxqt-policykit-agent
 exec --no-startup-id /usr/bin/lxqt-policykit-agent
 
