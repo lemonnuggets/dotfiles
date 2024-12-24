@@ -2,8 +2,21 @@ source "$ZDOTDIR/env.zsh"
 source "$ZDOTDIR/alias.zsh"
 source "$ZDOTDIR/functions.zsh"
 fpath=($ZDOTDIR/completions "${fpath[@]}")
-{{- if eq .tools.node_version_manager "asdf" }}
-fpath=(${ASDF_DIR}/completions $fpath)
+{{- if eq .tools.node_version_manager "nvm" }}
+# nvm
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+{{- else if eq .tools.node_version_manager "fnm" }}
+# fnm
+eval "$(fnm env --use-on-cd)"
+{{- else if eq .tools.node_version_manager "asdf" }}
+{{- if eq .chezmoi.os "darwin" }}
+source "$ASDF_DATA_DIR/asdf.sh"
+{{- else if eq .chezmoi.os "linux" }}
+source /opt/asdf-vm/asdf.sh
+{{- end }}
+{{- else }}
+# .tools.node_version_manager unset
 {{- end }}
 
 # Lines configured by zsh-newuser-install
@@ -25,19 +38,6 @@ compinit
 setopt INC_APPEND_HISTORY
 setopt EXTENDED_HISTORY
 setopt HIST_FIND_NO_DUPS
-
-{{- if eq .tools.node_version_manager "nvm" }}
-# nvm
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-{{- else if eq .tools.node_version_manager "fnm" }}
-# fnm
-eval "$(fnm env --use-on-cd)"
-{{- else if eq .tools.node_version_manager "asdf" }}
-. "$ASDF_DATA_DIR/asdf.sh"
-{{- else }}
-# .tools.node_version_manager unset
-{{- end }}
 
 # source "$ZDOTDIR/prompt.zsh"
 eval "$(starship init zsh)"
