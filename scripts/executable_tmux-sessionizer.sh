@@ -3,7 +3,9 @@
 if [[ $# -eq 1 ]]; then
 	selected=$1
 else
-	selected=$(find ~/Development/work ~/Development/work/swym-projects ~/Development/work/random ~/.config ~/scripts ~/Development/personal -mindepth 1 -maxdepth 1 -type d | fzf)
+	selected=$(sed "s:~:$HOME:g" ./config/directories.txt |
+		xargs -I {} find {} -maxdepth 1 -type d |
+		fzf)
 fi
 
 if [[ -z $selected ]]; then

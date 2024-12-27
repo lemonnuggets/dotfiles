@@ -1,0 +1,30 @@
+{{- if eq .chezmoi.os "linux" }}
+~/dev/work/swym/
+~/dev/work/ezyfi/
+~/dev/work/upwork/
+~/dev/work/samudai/
+~/dev/work/luganodes/
+~/dev/work/nellisoft/
+~/dev/work/interview-tasks/
+~/dev/work/
+~/dev/personal/
+~/dev/random/
+~/dev/pentest/
+~/dev/notes/
+~/dev/club-BIF/
+~/dev/club-STC/
+~/dev/learning/
+~/dev/languages/
+~/dev/college-code/
+~/dev/coding-contest/
+~/dev/
+~/.config/
+~/scripts/
+{{- else if eq .chezmoi.os "darwin" }}
+~/Development/work
+~/Development/work/swym-projects
+~/Development/work/random
+~/.config
+~/scripts
+~/Development/personal
+{{- end }}
