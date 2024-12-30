@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
 	selected=$1
 else
-	selected=$(sed "s:~:$HOME:g" ./config/directories.txt |
+	selected=$(sed "s:~:$HOME:g" ~/scripts/config/directories.txt |
 		xargs -I {} find {} -maxdepth 1 -type d |
 		fzf)
 fi
