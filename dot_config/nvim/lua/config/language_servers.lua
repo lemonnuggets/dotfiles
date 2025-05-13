@@ -1,5 +1,6 @@
 local language_servers = {
   -- rust_analyzer = {},
+  graphql = {},
   clangd = {},
   gopls = {},
   pyright = {},

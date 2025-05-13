@@ -9,6 +9,8 @@ Host github.com
 Include /Users/adam/.colima/ssh_config
 IdentityFile ~/.ssh/adam-jijo-swym
 
+Include config-swym-hosts
+
 # default account: adam-jijo-swym
 Host github.com
   HostName github.com
@@ -26,6 +28,4 @@ Host github-lemonnuggets
   AddKeysToAgent yes
   UseKeychain yes
   # IdentitiesOnly yes
-
-Include config-swym-hosts
 {{- end }}
