@@ -19,8 +19,16 @@ local substitutions = {
 ---list of all tools that need to be auto-installed
 local function toolsToAutoinstall(myLinters, myFormatters, myDebuggers, ignoreTools)
   -- get all linters, formatters, & debuggers and merge them into one list
-  local linterList = vim.tbl_flatten(vim.tbl_values(myLinters))
-  local formatterList = vim.tbl_flatten(vim.tbl_values(myFormatters))
+  local linterList = vim.iter(vim.tbl_values(myLinters)):flatten():totable()
+  local formatterList = vim
+    .iter(vim.tbl_values(myFormatters))
+    :map(function(formatters)
+      return vim.tbl_filter(function(v)
+        return type(v) == 'string'
+      end, formatters)
+    end)
+    :flatten()
+    :totable()
   local tools = vim.list_extend(linterList, formatterList)
   vim.list_extend(tools, myDebuggers)
 
