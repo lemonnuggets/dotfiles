@@ -2,7 +2,8 @@ vim.api.nvim_create_autocmd('BufNewFile', {
   group = vim.api.nvim_create_augroup('conjure_log_disable_lsp', { clear = true }),
   pattern = { 'conjure-log-*' },
   callback = function(e)
-    vim.diagnostic.disable(0)
+    -- vim.diagnostic.disable(0)
+    vim.diagnostic.enable(false)
   end,
   desc = 'Conjure Log disable LSP diagnostics',
 })
