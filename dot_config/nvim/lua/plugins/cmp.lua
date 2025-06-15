@@ -12,6 +12,7 @@ return {
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-cmdline',
     'hrsh7th/cmp-nvim-lsp-signature-help',
+    'folke/lazydev.nvim',
 
     -- Adds a number of user-friendly snippets
     'rafamadriz/friendly-snippets',
