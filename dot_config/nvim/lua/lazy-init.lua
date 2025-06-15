@@ -13,11 +13,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- [[ Configure plugins ]]
-require('lazy').setup({
-  { import = 'plugins' },
-  { import = 'dap-langs' },
-}, {
-  change_detection = { notify = false },
+require('lazy').setup({ import = 'plugins' }, { import = 'dap-langs' }, {
+  change_detection = { notify = true },
 })
 
 -- vim: ts=2 sts=2 sw=2 et
