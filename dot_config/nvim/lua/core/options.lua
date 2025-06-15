@@ -1,3 +1,5 @@
+vim.g.have_nerd_font = true
+
 -- Set highlight on search
 vim.o.hlsearch = false
 vim.o.incsearch = true
@@ -63,20 +65,37 @@ vim.o.colorcolumn = '120'
 vim.o.cursorline = true
 
 vim.diagnostic.config {
-  virtual_text = false,
-  signs = true,
-  underline = true,
-  update_in_insert = false,
-  float = {
-    border = 'rounded',
-    source = true,
-  },
   severity_sort = true,
+  float = { border = 'rounded', source = true },
+  underline = { severity = vim.diagnostic.severity.ERROR },
+  signs = vim.g.have_nerd_font and {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '󰅚 ',
+      [vim.diagnostic.severity.WARN] = '󰀪 ',
+      [vim.diagnostic.severity.INFO] = '󰋽 ',
+      [vim.diagnostic.severity.HINT] = '󰌶 ',
+    },
+  } or {},
+  virtual_text = {
+    current_line = true,
+    source = true,
+    spacing = 2,
+    hl_mode = 'combine',
+    format = function(diagnostic)
+      local diagnostic_message = {
+        [vim.diagnostic.severity.ERROR] = diagnostic.message,
+        [vim.diagnostic.severity.WARN] = diagnostic.message,
+        [vim.diagnostic.severity.INFO] = diagnostic.message,
+        [vim.diagnostic.severity.HINT] = diagnostic.message,
+      }
+      return diagnostic_message[diagnostic.severity]
+    end,
+  },
 }
 
 -- vim.o.ruler = true
 --
 -- -- makes sign column always one column with signs and line number
--- vim.o.signcolumn = "number"
+vim.o.signcolumn = 'yes'
 
 -- vim: ts=2 sts=2 sw=2 et
